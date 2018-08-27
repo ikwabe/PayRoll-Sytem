@@ -253,6 +253,7 @@ namespace PayRoll_Sytem
             {
                 MessageBox.Show(ex.Message);
             }
+            con.Close();
         }
 
         private void deductionCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -275,6 +276,39 @@ namespace PayRoll_Sytem
 
                 if (table.Rows.Count > 0)
                 {
+                    string getDeductionID = "select * from employeededuction where empcode = '" + empCode + "' and deductionID = '" + table.Rows[0][0] + "' and dateForDeduction = '" + deductionDate.Text + "'";
+
+                    MySqlCommand com2 = new MySqlCommand(getDeductionID, con);
+                   
+                    DataTable tab = new DataTable();
+                    da = new MySqlDataAdapter(com2);
+                    da.Fill(tab);
+                    da.Dispose();
+
+                    if(tab.Rows.Count > 0)
+                    {
+                        if(tab.Rows[0][5].ToString() == "YES")
+                        {
+                            label4.Visible = false;
+                            deductionAmountTxt.Visible = false;
+                            label11.Visible = true;
+                            percentageTxt.Visible = true;
+
+                            percentageTxt.Text = tab.Rows[0][7].ToString();
+                            deductionType.Text = tab.Rows[0][4].ToString();
+
+                        }
+                        else
+                        {
+                            label11.Visible = false;
+                            percentageTxt.Visible = false;
+                            deductionAmountTxt.Visible = true;
+                            label4.Visible = true;
+
+                            deductionAmountTxt.Text = tab.Rows[0][3].ToString();
+                            deductionType.Text = tab.Rows[0][4].ToString();
+                        }
+                    }
 
 
                 }
@@ -285,6 +319,7 @@ namespace PayRoll_Sytem
             {
                 MessageBox.Show(ex.Message);
             }
+            con.Clone();
         }
     }
 }
