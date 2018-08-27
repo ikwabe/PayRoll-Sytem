@@ -99,9 +99,11 @@ namespace PayRoll_Sytem
         }
 
         private static string empID = null;
+        string EmployeeFullName = null;
+
         private void searchResultDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string EmployeeFullName;
+           
             if (e.Button == MouseButtons.Left)
             {
                 int index = e.RowIndex;
@@ -111,86 +113,7 @@ namespace PayRoll_Sytem
                     DataGridViewRow selectedIndex = searchResultDataGrid.Rows[index];
                     EmployeeFullName = selectedIndex.Cells[0].Value.ToString();
 
-                    MySqlConnection con = new MySqlConnection();
-                    con.ConnectionString = Home.DBconnection;
-
-                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "'";
-                    MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
-                    MySqlDataAdapter da;
-                    DataTable table = new DataTable();
-
-                    try
-                    {
-                        con.Open();
-                        da = new MySqlDataAdapter(com);
-                        da.Fill(table);
-                        da.Dispose();
-
-                        if (table.Rows.Count > 0)
-                        {
-                            empID = table.Rows[0][0].ToString();
-                            employeeNameLabel.Text = EmployeeFullName;
-                            empCode = table.Rows[0][4].ToString();
-
-                            //for allowance
-                            string getDeduction = "select deductionID from employeededuction where empCode = '" + empCode + "' and dateForDeduction = '" + deductionDate.Text + "'";
-                            MySqlCommand com2 = new MySqlCommand(getDeduction, con);
-                            da = new MySqlDataAdapter(com2);
-                            DataTable tab1 = new DataTable();
-                            da.Fill(tab1);
-                            da.Dispose();
-                            DataTable tab = new DataTable();
-                            
-                            if (tab1.Rows.Count > 0)
-                            {
-                                deductionCombo.Items.Clear();
-                               
-                                for (int i = 0; i< tab1.Rows.Count; i++)
-                                {
-                                    string getDeductionName = "select deductionName from deduction where deductionID = '" + tab1.Rows[i][0] + "'";
-
-                                    MySqlCommand com3 = new MySqlCommand(getDeductionName, con);
-                                    da = new MySqlDataAdapter(com3);
-                                    da.Fill(tab);
-                                    da.Dispose();
-                                    deductionCombo.Items.Add(tab.Rows[i][0].ToString().ToUpper());
-                                }
-                            }
-
-
-                            //for allowance
-                            string getAllowance = "select allowanceID from employeeallowance where empCode = '" + empCode + "'";
-                            MySqlCommand comAll = new MySqlCommand(getAllowance, con);
-                            da = new MySqlDataAdapter(comAll);
-                            DataTable tab2 = new DataTable();
-                            da.Fill(tab2);
-                            da.Dispose();
-
-
-                            DataTable tab3 = new DataTable();
-
-                            if (tab2.Rows.Count > 0)
-                            {
-                                allowanceCombo.Items.Clear();
-
-                                for (int i = 0; i < tab2.Rows.Count; i++)
-                                {
-                                    string getAllowanceName = "select allowanceName from allowance where allowanceID = '" + tab2.Rows[i][0] + "'";
-
-                                    MySqlCommand com4 = new MySqlCommand(getAllowanceName, con);
-                                    da = new MySqlDataAdapter(com4);
-                                    da.Fill(tab3);
-                                    da.Dispose();
-                                    allowanceCombo.Items.Add(tab3.Rows[i][0].ToString().ToUpper());
-                                }
-                            }
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    con.Close();
+                    GetDetails(EmployeeFullName);
 
                 }
                 catch
@@ -199,20 +122,130 @@ namespace PayRoll_Sytem
                 }
 
             }
-            else
-            {
-               
-            }
+           
         }
+
+
+        private void GetDetails(string EmpFullName)
+        {
+            try
+            {
+
+                deductionCombo.Text = "";
+                deductionType.Text = "";
+                allowanceCombo.Text = "";
+                allowanceAmountTxt.Text = "";
+                deductionAmountTxt.Text = "";
+                percentageTxt.Text = "";
+
+
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+
+                string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmpFullName + "'";
+                MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
+                MySqlDataAdapter da;
+                DataTable table = new DataTable();
+
+                try
+                {
+                    con.Open();
+                    da = new MySqlDataAdapter(com);
+                    da.Fill(table);
+                    da.Dispose();
+
+                    if (table.Rows.Count > 0)
+                    {
+                        empID = table.Rows[0][0].ToString();
+                        employeeNameLabel.Text = EmpFullName;
+                        empCode = table.Rows[0][4].ToString();
+
+                        //for Deduction
+                        string getDeduction = "select deductionID from employeededuction where empCode = '" + empCode + "' and dateForDeduction = '" + deductionDate.Text + "'";
+                        MySqlCommand com2 = new MySqlCommand(getDeduction, con);
+                        da = new MySqlDataAdapter(com2);
+                        DataTable tab1 = new DataTable();
+                        da.Fill(tab1);
+                        da.Dispose();
+                        DataTable tab = new DataTable();
+
+                        if (tab1.Rows.Count > 0)
+                        {
+                            deductionCombo.Items.Clear();
+
+                            for (int i = 0; i < tab1.Rows.Count; i++)
+                            {
+                                string getDeductionName = "select deductionName from deduction where deductionID = '" + tab1.Rows[i][0] + "'";
+
+                                MySqlCommand com3 = new MySqlCommand(getDeductionName, con);
+                                da = new MySqlDataAdapter(com3);
+                                da.Fill(tab);
+                                da.Dispose();
+                                deductionCombo.Items.Add(tab.Rows[i][0].ToString().ToUpper());
+                            }
+                        }
+
+
+                        //for allowance
+                        string getAllowance = "select allowanceID from employeeallowance where empCode = '" + empCode + "'";
+                        MySqlCommand comAll = new MySqlCommand(getAllowance, con);
+                        da = new MySqlDataAdapter(comAll);
+                        DataTable tab2 = new DataTable();
+                        da.Fill(tab2);
+                        da.Dispose();
+
+
+                        DataTable tab3 = new DataTable();
+
+                        if (tab2.Rows.Count > 0)
+                        {
+                            allowanceCombo.Items.Clear();
+
+                            for (int i = 0; i < tab2.Rows.Count; i++)
+                            {
+                                string getAllowanceName = "select allowanceName from allowance where allowanceID = '" + tab2.Rows[i][0] + "'";
+
+                                MySqlCommand com4 = new MySqlCommand(getAllowanceName, con);
+                                da = new MySqlDataAdapter(com4);
+                                da.Fill(tab3);
+                                da.Dispose();
+                                allowanceCombo.Items.Add(tab3.Rows[i][0].ToString().ToUpper());
+                            }
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                con.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Error on EmpId or Empcode.");
+            }
+
+        }
+
 
         private void EditEmpDeductionAndAllowance_Load(object sender, EventArgs e)
         {
+            
             deductionDate.CustomFormat = "MMMM yyyy";
             LoadEmployee();
+
         }
 
+
+
+        string AllowID = null;
+        string deductionamount = null;
+        string allowanceamount = null;
+        string percentage = null;
         private void allowanceCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
@@ -243,7 +276,9 @@ namespace PayRoll_Sytem
 
                     if(tab.Rows.Count > 0)
                     {
+                        AllowID = tab.Rows[0][0].ToString();
                         allowanceAmountTxt.Text = tab.Rows[0][3].ToString();
+                        allowanceamount = tab.Rows[0][3].ToString();
                     }
 
 
@@ -320,6 +355,52 @@ namespace PayRoll_Sytem
                 MessageBox.Show(ex.Message);
             }
             con.Clone();
+        }
+
+        private void deductionDate_ValueChanged(object sender, EventArgs e)
+        {
+            if(EmployeeFullName != null)
+            {
+                GetDetails(EmployeeFullName);
+            }
+            else
+            {
+                MessageBox.Show("Please Select Name from the list.");
+            }
+        }
+
+        private void AllowUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if(allowanceAmountTxt.Text != "" && allowanceCombo.Text != "" && AllowID != null)
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+                string update = "update employeeallowance set amount = '" + allowanceAmountTxt.Text + "' where ID = '" + AllowID + "' ";
+
+                MySqlCommand com = new MySqlCommand(update, con);
+
+                MySqlDataReader rd;
+
+                try
+                {
+                    con.Open();
+
+                    //update
+
+                    rd = com.ExecuteReader();
+                    rd.Close();
+
+                    Login.RecordUserActivity("Changed " + allowanceCombo.Text + " Allowance amount from " + allowanceamount + " to " + allowanceAmountTxt.Text + " for Employee " + EmployeeFullName + " of employeeID "+empCode+"");
+
+                    MessageBox.Show("Update Successful!");
+
+
+                }
+                catch(MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
