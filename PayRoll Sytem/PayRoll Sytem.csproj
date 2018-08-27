@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38B2B6D1-DCD9-4947-8698-31DA958A52DF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayRoll_Sytem</RootNamespace>
+    <AssemblyName>PayRoll Sytem</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>E:\Frame Work\Bunifu_Framework_Manager_1.5.3_x86x64_Downloadly.ir\Bunifu Framework Manager 1.5.3 x86x64\Crack\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>E:\Backups for Visual Studio Projects\Visual Studio 2015\Projects\Bus Booking\Bus Booking\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data">
+      <HintPath>E:\Backups for Visual Studio Projects\Visual Studio 2015\Projects\UdoRead\OnlineMongo\OnlineMongo\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addAllowanceTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addAllowanceTab.Designer.cs">
+      <DependentUpon>addAllowanceTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addDeductionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addDeductionTab.Designer.cs">
+      <DependentUpon>addDeductionTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addNewUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addNewUserTab.Designer.cs">
+      <DependentUpon>addNewUserTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllowanceAndDeductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllowanceAndDeductionForm.Designer.cs">
+      <DependentUpon>AllowanceAndDeductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllowanceTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AllowanceTab.Designer.cs">
+      <DependentUpon>AllowanceTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="deductionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="deductionTab.Designer.cs">
+      <DependentUpon>deductionTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="departmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="departmentForm.Designer.cs">
+      <DependentUpon>departmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editAllowanceTb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editAllowanceTb.Designer.cs">
+      <DependentUpon>editAllowanceTb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editDeductionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editDeductionTab.Designer.cs">
+      <DependentUpon>editDeductionTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editDepartmentTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editDepartmentTab.Designer.cs">
+      <DependentUpon>editDepartmentTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmpDeductionAndAllowance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmpDeductionAndAllowance.Designer.cs">
+      <DependentUpon>EditEmpDeductionAndAllowance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeAllawanceAndDeductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeAllawanceAndDeductionForm.Designer.cs">
+      <DependentUpon>EmployeeAllawanceAndDeductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeRegForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeRegForm.Designer.cs">
+      <DependentUpon>EmployeeRegForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="generatePayRollTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="generatePayRollTab.Designer.cs">
+      <DependentUpon>generatePayRollTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PayRollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayRollForm.Designer.cs">
+      <DependentUpon>PayRollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="printreceiptTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="printreceiptTab.Designer.cs">
+      <DependentUpon>printreceiptTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="registerDepartmentTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="registerDepartmentTab.Designer.cs">
+      <DependentUpon>registerDepartmentTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salarySlip.cs" />
+    <Compile Include="sendReceiptTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="sendReceiptTab.Designer.cs">
+      <DependentUpon>sendReceiptTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateUserTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="updateUserTab.Designer.cs">
+      <DependentUpon>updateUserTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerifyLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerifyLogin.Designer.cs">
+      <DependentUpon>VerifyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewPayRollTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewPayRollTab.Designer.cs">
+      <DependentUpon>viewPayRollTab.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addAllowanceTab.resx">
+      <DependentUpon>addAllowanceTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addDeductionTab.resx">
+      <DependentUpon>addDeductionTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addNewUserTab.resx">
+      <DependentUpon>addNewUserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllowanceAndDeductionForm.resx">
+      <DependentUpon>AllowanceAndDeductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllowanceTab.resx">
+      <DependentUpon>AllowanceTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deductionTab.resx">
+      <DependentUpon>deductionTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="departmentForm.resx">
+      <DependentUpon>departmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editAllowanceTb.resx">
+      <DependentUpon>editAllowanceTb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editDeductionTab.resx">
+      <DependentUpon>editDeductionTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editDepartmentTab.resx">
+      <DependentUpon>editDepartmentTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEmpDeductionAndAllowance.resx">
+      <DependentUpon>EditEmpDeductionAndAllowance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeAllawanceAndDeductionForm.resx">
+      <DependentUpon>EmployeeAllawanceAndDeductionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeRegForm.resx">
+      <DependentUpon>EmployeeRegForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="generatePayRollTab.resx">
+      <DependentUpon>generatePayRollTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayRollForm.resx">
+      <DependentUpon>PayRollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="printreceiptTab.resx">
+      <DependentUpon>printreceiptTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registerDepartmentTab.resx">
+      <DependentUpon>registerDepartmentTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sendReceiptTab.resx">
+      <DependentUpon>sendReceiptTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateUserTab.resx">
+      <DependentUpon>updateUserTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerifyLogin.resx">
+      <DependentUpon>VerifyLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewPayRollTab.resx">
+      <DependentUpon>viewPayRollTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1497134779090-320x320.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Church_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_Church_logo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

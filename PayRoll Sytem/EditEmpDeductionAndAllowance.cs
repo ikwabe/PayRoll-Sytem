@@ -1,0 +1,290 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
+namespace PayRoll_Sytem
+{
+    public partial class EditEmpDeductionAndAllowance : Form
+    {
+        public EditEmpDeductionAndAllowance()
+        {
+            InitializeComponent();
+        }
+
+        private void closeBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Close();
+                EmployeeAllawanceAndDeductionForm emp = new EmployeeAllawanceAndDeductionForm();
+                emp.ShowDialog();
+            }
+            
+        }
+
+        private void miniMizeBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+
+        private static string empCode = null;
+        private void LoadEmployee()
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string loadEmpNames = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee";
+            MySqlCommand com = new MySqlCommand(loadEmpNames, con);
+            MySqlDataAdapter da;
+            DataTable table = new DataTable();
+            try
+            {
+                con.Open();
+                da = new MySqlDataAdapter(com);
+                da.Fill(table);
+                da.Dispose();
+
+                if (table.Rows.Count > 0)
+                {
+                    searchResultDataGrid.DataSource = table;
+
+                }
+                else
+                {
+                    searchResultDataGrid.DataSource = null;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void searchText_OnValueChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+            string search = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' or CONCAT(fname,' ',mname, ' ',lname) like '" + searchText.Text + "%'";
+            MySqlCommand com = new MySqlCommand(search, con);
+
+
+            DataTable table = new DataTable();
+            MySqlDataReader reader;
+            try
+            {
+                con.Open();
+                reader = com.ExecuteReader();
+                table.Load(reader);
+                reader.Close();
+                searchResultDataGrid.DataSource = table;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+        }
+
+        private static string empID = null;
+        private void searchResultDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string EmployeeFullName;
+            if (e.Button == MouseButtons.Left)
+            {
+                int index = e.RowIndex;
+
+                try
+                {
+                    DataGridViewRow selectedIndex = searchResultDataGrid.Rows[index];
+                    EmployeeFullName = selectedIndex.Cells[0].Value.ToString();
+
+                    MySqlConnection con = new MySqlConnection();
+                    con.ConnectionString = Home.DBconnection;
+
+                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "'";
+                    MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
+                    MySqlDataAdapter da;
+                    DataTable table = new DataTable();
+
+                    try
+                    {
+                        con.Open();
+                        da = new MySqlDataAdapter(com);
+                        da.Fill(table);
+                        da.Dispose();
+
+                        if (table.Rows.Count > 0)
+                        {
+                            empID = table.Rows[0][0].ToString();
+                            employeeNameLabel.Text = EmployeeFullName;
+                            empCode = table.Rows[0][4].ToString();
+
+                            //for allowance
+                            string getDeduction = "select deductionID from employeededuction where empCode = '" + empCode + "' and dateForDeduction = '" + deductionDate.Text + "'";
+                            MySqlCommand com2 = new MySqlCommand(getDeduction, con);
+                            da = new MySqlDataAdapter(com2);
+                            DataTable tab1 = new DataTable();
+                            da.Fill(tab1);
+                            da.Dispose();
+                            DataTable tab = new DataTable();
+                            
+                            if (tab1.Rows.Count > 0)
+                            {
+                                deductionCombo.Items.Clear();
+                               
+                                for (int i = 0; i< tab1.Rows.Count; i++)
+                                {
+                                    string getDeductionName = "select deductionName from deduction where deductionID = '" + tab1.Rows[i][0] + "'";
+
+                                    MySqlCommand com3 = new MySqlCommand(getDeductionName, con);
+                                    da = new MySqlDataAdapter(com3);
+                                    da.Fill(tab);
+                                    da.Dispose();
+                                    deductionCombo.Items.Add(tab.Rows[i][0].ToString().ToUpper());
+                                }
+                            }
+
+
+                            //for allowance
+                            string getAllowance = "select allowanceID from employeeallowance where empCode = '" + empCode + "'";
+                            MySqlCommand comAll = new MySqlCommand(getAllowance, con);
+                            da = new MySqlDataAdapter(comAll);
+                            DataTable tab2 = new DataTable();
+                            da.Fill(tab2);
+                            da.Dispose();
+
+
+                            DataTable tab3 = new DataTable();
+
+                            if (tab2.Rows.Count > 0)
+                            {
+                                allowanceCombo.Items.Clear();
+
+                                for (int i = 0; i < tab2.Rows.Count; i++)
+                                {
+                                    string getAllowanceName = "select allowanceName from allowance where allowanceID = '" + tab2.Rows[i][0] + "'";
+
+                                    MySqlCommand com4 = new MySqlCommand(getAllowanceName, con);
+                                    da = new MySqlDataAdapter(com4);
+                                    da.Fill(tab3);
+                                    da.Dispose();
+                                    allowanceCombo.Items.Add(tab3.Rows[i][0].ToString().ToUpper());
+                                }
+                            }
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    con.Close();
+
+                }
+                catch
+                {
+                    MessageBox.Show("Error on EmpId or Empcode.");
+                }
+
+            }
+            else
+            {
+               
+            }
+        }
+
+        private void EditEmpDeductionAndAllowance_Load(object sender, EventArgs e)
+        {
+            deductionDate.CustomFormat = "MMMM yyyy";
+            LoadEmployee();
+        }
+
+        private void allowanceCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string getAllowanceId = "select * from allowance where allowanceName = '" + allowanceCombo.Text + "'";
+            MySqlCommand com = new MySqlCommand(getAllowanceId, con);
+            MySqlDataAdapter da;
+            DataTable table = new DataTable();
+
+            try
+            {
+                con.Open();
+
+                da = new MySqlDataAdapter(com);
+                da.Fill(table);
+                da.Dispose();
+
+                if (table.Rows.Count > 0)
+                {
+                    string getAllowanceID = "select * from employeeallowance where empCode = '" + empCode + "' and allowanceID = '" + table.Rows[0][0].ToString() + "'";
+
+                    MySqlCommand com1 = new MySqlCommand(getAllowanceID, con);
+                   
+                    DataTable tab = new DataTable();
+
+                    da = new MySqlDataAdapter(com1);
+                    da.Fill(tab);
+                    da.Dispose();
+
+                    if(tab.Rows.Count > 0)
+                    {
+                        allowanceAmountTxt.Text = tab.Rows[0][3].ToString();
+                    }
+
+
+                }
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void deductionCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string getDeductionId = "select * from deduction where deductionName = '" + deductionCombo.Text + "'";
+            MySqlCommand com = new MySqlCommand(getDeductionId, con);
+            MySqlDataAdapter da;
+            DataTable table = new DataTable();
+
+            try
+            {
+                con.Open();
+
+                da = new MySqlDataAdapter(com);
+                da.Fill(table);
+                da.Dispose();
+
+                if (table.Rows.Count > 0)
+                {
+
+
+                }
+
+
+                }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
+}
