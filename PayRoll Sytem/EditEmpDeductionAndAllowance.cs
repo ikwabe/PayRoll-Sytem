@@ -240,6 +240,7 @@ namespace PayRoll_Sytem
 
 
         string AllowID = null;
+        string dedID = null;
         string deductionamount = null;
         string allowanceamount = null;
         string percentage = null;
@@ -291,6 +292,7 @@ namespace PayRoll_Sytem
             con.Close();
         }
 
+        
         private void deductionCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection();
@@ -331,6 +333,8 @@ namespace PayRoll_Sytem
 
                             percentageTxt.Text = tab.Rows[0][7].ToString();
                             deductionType.Text = tab.Rows[0][4].ToString();
+                            dedID = tab.Rows[0][0].ToString();
+                            percentage = tab.Rows[0][7].ToString();
 
                         }
                         else
@@ -342,6 +346,8 @@ namespace PayRoll_Sytem
 
                             deductionAmountTxt.Text = tab.Rows[0][3].ToString();
                             deductionType.Text = tab.Rows[0][4].ToString();
+                            dedID = tab.Rows[0][0].ToString();
+                            deductionamount = tab.Rows[0][3].ToString();
                         }
                     }
 
@@ -369,6 +375,7 @@ namespace PayRoll_Sytem
             }
         }
 
+        //delete allowance for an Employee
         private void AllowUpdateBtn_Click(object sender, EventArgs e)
         {
             if(allowanceAmountTxt.Text != "" && allowanceCombo.Text != "" && AllowID != null)
@@ -394,9 +401,125 @@ namespace PayRoll_Sytem
 
                     MessageBox.Show("Update Successful!");
 
+                    allowanceAmountTxt.Text = "";
+                    allowanceCombo.Text = "";
 
                 }
                 catch(MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        //delete allowance for an Employee
+        private void AllowDeleteBtn_Click(object sender, EventArgs e)
+        {
+            if(AllowID != null)
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+                string delete = "delete from employeeallowance where ID = '" + AllowID + "' ";
+
+                MySqlCommand com = new MySqlCommand(delete, con);
+
+                MySqlDataReader rd;
+
+                try
+                {
+                    con.Open();
+
+                    //update
+
+                    if(MessageBox.Show("Are you sure you want to delete this allowance for "+EmployeeFullName,"Alart!",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        rd = com.ExecuteReader();
+                        rd.Close();
+
+                        Login.RecordUserActivity("Deleted " + allowanceCombo.Text + " Allowance for Employee " + EmployeeFullName + " of employeeID " + empCode + "");
+
+                        MessageBox.Show("Delete Successful!");
+                        allowanceCombo.Items.Clear();
+                        GetDetails(EmployeeFullName);
+                    }
+                   
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        // update deduction for an employee
+        private void DedUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if(dedID != null && deductionAmountTxt.Text !="" && deductionAmountTxt.Visible == true && deductionType.Text !="" && deductionCombo.Text != "")
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+
+                string update = "update employeededuction set amountDeducted = '" + deductionAmountTxt.Text +
+                    "', deductiontype = '" + deductionType.Text +
+                    "', dateForDeduction = '" + deductionDate.Text + "' where ID = '"+dedID+"'";
+
+                MySqlCommand com = new MySqlCommand(update, con);
+
+                MySqlDataReader rd;
+
+                try
+                {
+                    con.Open();
+
+                    //update
+
+                    rd = com.ExecuteReader();
+                    rd.Close();
+
+                    Login.RecordUserActivity("Changed " + deductionCombo.Text + " Deduction amount from " + deductionamount + " to " + deductionAmountTxt.Text + " for Employee " + EmployeeFullName + " of employeeID " + empCode + "");
+
+                    MessageBox.Show("Update Successful!");
+                    deductionCombo.Items.Clear();
+                    GetDetails(EmployeeFullName);
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else if(dedID != null && percentageTxt.Text != "" && percentageTxt.Visible == true && deductionCombo.Text !="" && deductionType.Text != "")
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+
+                string update = "update employeededuction set percentage = '" + percentageTxt.Text +
+                    "', deductiontype = '" + deductionType.Text +
+                    "', dateForDeduction = '" + deductionDate.Text + "' where ID = '" + dedID + "'";
+
+                MySqlCommand com = new MySqlCommand(update, con);
+
+                MySqlDataReader rd;
+
+                try
+                {
+                    con.Open();
+
+                    //update
+
+                    rd = com.ExecuteReader();
+                    rd.Close();
+
+                    Login.RecordUserActivity("Changed " + deductionCombo.Text + " Deduction percentage from " + percentage + " to " + percentageTxt.Text + " for Employee " + EmployeeFullName + " of employeeID " + empCode + "");
+
+                    MessageBox.Show("Update Successful!");
+                    deductionCombo.Items.Clear();
+                    GetDetails(EmployeeFullName);
+
+                }
+                catch (MySqlException ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
