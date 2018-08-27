@@ -31,28 +31,7 @@ namespace PayRoll_Sytem
             InitializeComponent();
         }
 
-        private void toSomeEmployeeOption_CheckedChanged(object sender, EventArgs e)
-        {
-            if (toSomeEmployeeOption.Checked == true)
-            {
-                searchPanel.Visible = true;
-                payRollDataGrid.Columns["CheckedName"].Visible = true;
-                getGeneratedPayRoll();
-            }
-
-
-        }
-
-        private void toAllEmployeeOption_CheckedChanged(object sender, EventArgs e)
-        {
-            if (toAllEmployeeOption.Checked == true)
-            {
-                searchPanel.Visible = false;
-                payRollDataGrid.Columns["CheckedName"].Visible = false;
-            }
-
-        }
-
+       
         private void sendReceiptTab_Load(object sender, EventArgs e)
         {
             receiptDate.CustomFormat = "MMMM yyyy";
@@ -97,47 +76,6 @@ namespace PayRoll_Sytem
 
 
         }
-
-
-        private void searchText_OnValueChanged(object sender, EventArgs e)
-        {
-            MySqlConnection con = new MySqlConnection();
-            con.ConnectionString = Home.DBconnection;
-
-            string loadPayRoll = "select empFullName 'Employee Name', email 'Employee E-mail' from payroll where dateGenerated = '" + receiptDate.Text + "' and empFullName like '" + searchText.Text + "%'";
-
-            MySqlCommand payroll = new MySqlCommand(loadPayRoll, con);
-
-            MySqlDataAdapter da;
-
-            DataTable payRollTable = new DataTable();
-
-            try
-            {
-
-                da = new MySqlDataAdapter(payroll);
-                da.Fill(payRollTable);
-                da.Dispose();
-                if (payRollTable.Rows.Count > 0)
-                {
-                    payRollDataGrid.DataSource = payRollTable;
-
-                }
-                else
-                {
-                    payRollDataGrid.DataSource = null;
-
-                }
-
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-        }
-
 
         private void sendEmail(string email)
         {
@@ -245,8 +183,10 @@ namespace PayRoll_Sytem
             }
             con.Close();
         }
-      
 
-        
+        private void ViewPayRoll_Click(object sender, EventArgs e)
+        {
+            getGeneratedPayRoll();
+        }
     }
 }
