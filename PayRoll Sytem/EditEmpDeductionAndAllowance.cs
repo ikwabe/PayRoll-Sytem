@@ -112,7 +112,7 @@ namespace PayRoll_Sytem
                 {
                     DataGridViewRow selectedIndex = searchResultDataGrid.Rows[index];
                     EmployeeFullName = selectedIndex.Cells[0].Value.ToString();
-
+                    panel5.Visible = true;
                     GetDetails(EmployeeFullName);
 
                 }
@@ -184,6 +184,10 @@ namespace PayRoll_Sytem
                                 deductionCombo.Items.Add(tab.Rows[i][0].ToString().ToUpper());
                             }
                         }
+                        else
+                        {
+                            deductionCombo.Items.Clear();
+                        }
 
 
                         //for allowance
@@ -234,6 +238,7 @@ namespace PayRoll_Sytem
             
             deductionDate.CustomFormat = "MMMM yyyy";
             LoadEmployee();
+
 
         }
 
@@ -375,7 +380,7 @@ namespace PayRoll_Sytem
             }
         }
 
-        //delete allowance for an Employee
+        //update allowance for an Employee
         private void AllowUpdateBtn_Click(object sender, EventArgs e)
         {
             if(allowanceAmountTxt.Text != "" && allowanceCombo.Text != "" && AllowID != null)
@@ -410,12 +415,16 @@ namespace PayRoll_Sytem
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("Please select the name from the list and select allowance from the list to perform this operation", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         //delete allowance for an Employee
         private void AllowDeleteBtn_Click(object sender, EventArgs e)
         {
-            if(AllowID != null)
+            if(AllowID != null && allowanceCombo.Text!= "")
             {
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = Home.DBconnection;
@@ -450,7 +459,12 @@ namespace PayRoll_Sytem
                     MessageBox.Show(ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("Please select the name from the list and select allowance from the list to perform this operation", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         // update deduction for an employee
         private void DedUpdateBtn_Click(object sender, EventArgs e)
@@ -523,6 +537,49 @@ namespace PayRoll_Sytem
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please select the name from the list and select deduction from the list to perform this operation", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+
+        private void DedDeleteBtn_Click(object sender, EventArgs e)
+        {
+            if(dedID != null && deductionCombo.Text != "")
+            {
+                MySqlConnection con = new MySqlConnection();
+                con.ConnectionString = Home.DBconnection;
+                string delete = "delete from employeededuction where ID = '" + dedID + "'";
+                MySqlCommand com = new MySqlCommand(delete, con);
+                MySqlDataReader rd;
+
+                try
+                {
+                    con.Open();
+
+                    if (MessageBox.Show("Are you sure you want to delete this deduction for " + EmployeeFullName, "Alart!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        rd = com.ExecuteReader();
+                        rd.Close();
+
+                        Login.RecordUserActivity("Deleted " + deductionCombo.Text + " Deduction for Employee " + EmployeeFullName + " of employeeID " + empCode + "");
+                        deductionCombo.Items.Clear();
+                        GetDetails(EmployeeFullName);
+                    }
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select the name from the list and select deduction from the list to perform this operation", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
