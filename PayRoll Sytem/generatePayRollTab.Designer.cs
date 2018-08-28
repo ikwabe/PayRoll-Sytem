@@ -155,6 +155,7 @@
             this.savePayRollBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.savePayRollBtn.Textcolor = System.Drawing.Color.White;
             this.savePayRollBtn.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savePayRollBtn.Click += new System.EventHandler(this.savePayRollBtn_Click);
             // 
             // panel3
             // 
@@ -179,6 +180,7 @@
             this.payRollDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.payRollDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.payRollDataGrid.BackgroundColor = System.Drawing.Color.Silver;
+            this.payRollDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.payRollDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));

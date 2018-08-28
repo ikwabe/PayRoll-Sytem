@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.Office.Interop.Excel;
+
 
 namespace PayRoll_Sytem
 {
@@ -129,15 +131,15 @@ namespace PayRoll_Sytem
             //checking if the payroll is present
             string checkThePayroll = "select dateGenerated from payRoll where dateGenerated = '" + payRollDate.Text + "'";
             MySqlCommand CheckPayrol = new MySqlCommand(checkThePayroll, con);
-           
-            DataTable tab = new DataTable();
+
+            System.Data.DataTable tab = new System.Data.DataTable();
 
             MySqlCommand EmployeeCom = new MySqlCommand(getEmployeeDetails, con);
             
             MySqlDataAdapter da;
 
             MySqlDataReader rd;
-            DataTable Emptable = new DataTable();
+            System.Data.DataTable Emptable = new System.Data.DataTable();
             
             try
             {
@@ -171,7 +173,7 @@ namespace PayRoll_Sytem
                             string getAllowance = "select * from employeeallowance where empCode = '" + Emptable.Rows[i][4] + "'";
                             MySqlCommand allowCom = new MySqlCommand(getAllowance, con);
 
-                            DataTable allowTable = new DataTable();
+                            System.Data.DataTable allowTable = new System.Data.DataTable();
                             da = new MySqlDataAdapter(allowCom);
                             da.Fill(allowTable);
                             da.Dispose();
@@ -189,7 +191,7 @@ namespace PayRoll_Sytem
 
                                 MySqlCommand allowCom1 = new MySqlCommand(selectAllowance, con);
 
-                                DataTable allowTable1 = new DataTable();
+                                System.Data.DataTable allowTable1 = new System.Data.DataTable();
                                 da = new MySqlDataAdapter(allowCom1);
                                 da.Fill(allowTable1);
                                 da.Dispose();
@@ -219,7 +221,7 @@ namespace PayRoll_Sytem
                             string getDeduction = "select * from employeededuction where empCode = '" + Emptable.Rows[i][4] + "' and dateForDeduction = '"+payRollDate.Text+ "' or deductiontype = 'CONSTANT'";
                             MySqlCommand deductionCom = new MySqlCommand(getDeduction, con);
 
-                            DataTable deductionTable = new DataTable();
+                            System.Data.DataTable deductionTable = new System.Data.DataTable();
                             da = new MySqlDataAdapter(deductionCom);
                             da.Fill(deductionTable);
                             da.Dispose();
@@ -235,7 +237,7 @@ namespace PayRoll_Sytem
 
                                 MySqlCommand deductionCom1 = new MySqlCommand(getDeductionName, con);
 
-                                DataTable deductionTable1 = new DataTable();
+                                System.Data.DataTable deductionTable1 = new System.Data.DataTable();
                                 da = new MySqlDataAdapter(deductionCom1);
                                 da.Fill(deductionTable1);
                                 da.Dispose();
@@ -279,7 +281,7 @@ namespace PayRoll_Sytem
 
                             MySqlCommand deductionCom2 = new MySqlCommand(checkStatusForDEduction, con);
 
-                            DataTable deductionTableStatus = new DataTable();
+                            System.Data.DataTable deductionTableStatus = new System.Data.DataTable();
                             da = new MySqlDataAdapter(deductionCom2);
                             da.Fill(deductionTableStatus);
                             da.Dispose();
@@ -294,7 +296,7 @@ namespace PayRoll_Sytem
 
                                     MySqlCommand deductionCom12 = new MySqlCommand(getDeductionName2, con);
 
-                                    DataTable deductionTable12 = new DataTable();
+                                    System.Data.DataTable deductionTable12 = new System.Data.DataTable();
                                     da = new MySqlDataAdapter(deductionCom12);
                                     da.Fill(deductionTable12);
                                     da.Dispose();
@@ -417,7 +419,7 @@ namespace PayRoll_Sytem
 
             MySqlDataAdapter da;
 
-            DataTable payRollTable = new DataTable();
+            System.Data.DataTable payRollTable = new System.Data.DataTable();
 
             try
             {
@@ -439,6 +441,8 @@ namespace PayRoll_Sytem
                 }
                
                 payRollDataGrid.DataSource = payRollTable;
+
+               
             }
             catch (MySqlException ex)
             {
@@ -451,6 +455,109 @@ namespace PayRoll_Sytem
         {
             
             calculationAndGeneration();   
+        }
+
+
+        //save to excel function
+
+        SaveFileDialog save;
+        private void SavePayRoll()
+        {
+            save = new SaveFileDialog();
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Workbook wb = excel.Workbooks.Add(XlSheetType.xlWorksheet);
+            Worksheet ws = (Worksheet)excel.ActiveSheet;
+
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string loadPayRoll = "select * from payroll where dateGenerated = '" + payRollDate.Text + "'";
+
+            MySqlCommand payroll = new MySqlCommand(loadPayRoll, con);
+
+            MySqlDataAdapter da;
+
+            System.Data.DataTable payRollTable = new System.Data.DataTable();
+
+            try
+            {
+                con.Open();
+                da = new MySqlDataAdapter(payroll);
+                da.Fill(payRollTable);
+                da.Dispose();
+                
+              if(payRollTable.Rows.Count > 0)
+                {
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        ws.Cells[1, 1] = "Employee Name";
+                        ws.Cells[1, 2] = "Employee ID";
+                        ws.Cells[1, 3] = "Depertment ID";
+                        ws.Cells[1, 4] = "Salary Category";
+                        ws.Cells[1, 5] = "Scale Base";
+                        ws.Cells[1, 6] = "Scale Percent";
+                        ws.Cells[1, 7] = "Bank Account";
+                        ws.Cells[1, 8] = "Bank Name";
+                        ws.Cells[1, 9] = "Salary Basic";
+                        ws.Cells[1, 10] = "Allowance Depression";
+                        ws.Cells[1, 11] = "Allowance Bicycle";
+                        ws.Cells[1, 12] = "Leader Travel Allowance";
+                        ws.Cells[1, 13] = "Travel C/Limit";
+                        ws.Cells[1, 14] = "Postage Exps";
+                        ws.Cells[1, 15] = "Allowance Utility";
+                        ws.Cells[1, 16] = "Income Total";
+                        ws.Cells[1, 17] = "Income Taxable";
+                        ws.Cells[1, 18] = "Tithe";
+                        ws.Cells[1, 19] = "i/Tax";
+                        ws.Cells[1, 20] = "Social Security Fund";
+                        ws.Cells[1, 21] = "House Rent";
+                        ws.Cells[1, 22] = "Maafa Fund";
+                        ws.Cells[1, 23] = "Food";
+                        ws.Cells[1, 24] = "SACCOS";
+                        ws.Cells[1, 25] = "Cash/Salary Advance";
+                        ws.Cells[1, 26] = "NBC Loan";
+                        ws.Cells[1, 27] = "Motor Vehicle Loan";
+                        ws.Cells[1, 28] = "Furniture Loan";
+                        ws.Cells[1, 29] = "HESLB Loan";
+                        ws.Cells[1, 30] = "Deduction On Report";
+                        ws.Cells[1, 31] = "Personal Serving";
+                        ws.Cells[1, 32] = "NHIF";
+                        ws.Cells[1, 33] = "Salary Net";
+                        ws.Cells[1, 34] = "Refund i/Tax";
+                        ws.Cells[1, 35] = "Pay Net";
+                        ws.Cells[1, 36] = "Position";
+                        ws.Cells[1, 37] = "Employee Email";
+
+                        for (int r = 0; r< 1; r++)
+                        {
+                            for (int c = 0; c < payRollTable.Columns.Count; c++)
+                            {
+                                ws.Cells[r+2, c+1] = payRollTable.Rows[r][c].ToString();
+                            }
+                        }
+                        ws.SaveAs(save.FileName + ".xlsx", XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                        excel.Quit();
+                    }
+
+                }
+              else
+                {
+                    MessageBox.Show("Hakuna kitu.");
+                }
+                
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+           
+           
+        }
+
+        private void savePayRollBtn_Click(object sender, EventArgs e)
+        {
+            SavePayRoll();
         }
     }
 }
