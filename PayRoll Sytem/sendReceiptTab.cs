@@ -77,8 +77,14 @@ namespace PayRoll_Sytem
 
         }
 
+        Label sendInfo;
         private void sendEmail(string email)
         {
+            sendInfo = new Label();
+            sendInfo.Font = new Font("Calibri", 11);
+           
+            sendInfo.AutoSize = true;
+
             MailMessage mail = new MailMessage("ikwabe04@gmail.com", email, "TESTING THE SALARY SLIP EMAIL SENDER", "Habari Rafiki? Usishitushwe na ujumbe huu, tunajaribu system. Asante.");
             SmtpClient client = new SmtpClient("smtp.gmail.com");
             client.Port = 587;
@@ -93,11 +99,16 @@ namespace PayRoll_Sytem
             {
                 client.Send(mail);
                 Login.RecordUserActivity("Sent the Salary Slip to " + email);
-                MessageBox.Show("Message Sent.");
+
+                sendInfo.ForeColor = Color.LightGreen;
+                sendInfo.Text = "Email sent to: " + email + "     (" + DateTime.Now.ToLongTimeString() + ")";
+                information.Controls.Add(sendInfo);
             }
             catch
             {
-                MessageBox.Show("Message Fail.");
+                sendInfo.ForeColor = Color.Orange;
+                sendInfo.Text = "Email NOT sent to: " + email + "     ("+DateTime.Now.ToLongTimeString()+")";
+                information.Controls.Add(sendInfo);
             }
 
 
@@ -166,15 +177,13 @@ namespace PayRoll_Sytem
                                             table.Rows[i][35].ToString(),
                                             table.Rows[i][36].ToString());
 
-                        sendEmail(table.Rows[i][38].ToString());
-
-                       
+                        sendEmail(table.Rows[i][38].ToString());  
                     }
                     emailSendProgressBar.Visible = false;
                 }
                 else
                 {
-                    MessageBox.Show("Sorry, Employee are not pressent in this payroll Month. Please check for another Month.");
+                    MessageBox.Show("Sorry, The Payroll for this Month is not present. Please check for another Month.");
                 }
             }
             catch (MySqlException ex)

@@ -494,6 +494,10 @@ namespace PayRoll_Sytem
                 
               if(payRollTable.Rows.Count > 0)
                 {
+                    save.FileName = payRollDate.Text + " PayRoll";
+                    save.DefaultExt = ".xlsx";
+                    save.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SEC PayRoll Records";
+
                     if (save.ShowDialog() == DialogResult.OK)
                     {
                         ws.Cells[1, 1] = "Employee Name";
@@ -535,33 +539,24 @@ namespace PayRoll_Sytem
                         ws.Cells[1, 37] = "Position";
                         ws.Cells[1, 38] = "Employee Email";
 
-                        //to insert the data at the first row
-                        for (int row = 0; row< 1; row++)
+                        //to insert the data to the sheet
+                        for (int row = 1; row <= payRollTable.Rows.Count; row++)
                         {
                             for (int col = 0; col < payRollTable.Columns.Count; col++)
                             {
-                                ws.Cells[row+2, col+1] = payRollTable.Rows[row][col].ToString();
+                                ws.Cells[row+1, col+1] = payRollTable.Rows[row-1][col].ToString();
                             }
+                           
                         }
-
-
-                        //to insert data at the next rows
-                        for (int row = 2; row < payRollTable.Rows.Count; row++)
-                        {
-                            for (int col = 0; col < payRollTable.Columns.Count; col++)
-                            {
-                                ws.Cells[row + 1, col + 1] = payRollTable.Rows[row-1][col].ToString();
-                            }
-                        }
-
-                        ws.SaveAs(save.FileName + ".xlsx", XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
+                        ws.SaveAs(save.FileName, XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                         excel.Quit();
+
                     }
 
                 }
               else
                 {
-                    MessageBox.Show("Hakuna kitu.");
+                    MessageBox.Show("Sorry, Something Went Wrong.");
                 }
                 
             }
@@ -574,9 +569,12 @@ namespace PayRoll_Sytem
            
         }
 
+
         private void savePayRollBtn_Click(object sender, EventArgs e)
         {
             SavePayRoll();
         }
+
+
     }
 }

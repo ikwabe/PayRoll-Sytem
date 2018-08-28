@@ -40,6 +40,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginBtn.DisabledColor = System.Drawing.Color.Gray;
             this.loginBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.loginBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("loginBtn.Iconimage")));
+            this.loginBtn.Iconimage = null;
             this.loginBtn.Iconimage_right = null;
             this.loginBtn.Iconimage_right_Selected = null;
             this.loginBtn.Iconimage_Selected = null;
@@ -70,7 +71,7 @@
             this.loginBtn.IconVisible = true;
             this.loginBtn.IconZoom = 70D;
             this.loginBtn.IsTab = false;
-            this.loginBtn.Location = new System.Drawing.Point(187, 339);
+            this.loginBtn.Location = new System.Drawing.Point(31, 435);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(82)))), ((int)(((byte)(110)))));
@@ -95,10 +96,10 @@
             this.password.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password.ForeColor = System.Drawing.Color.Gainsboro;
             this.password.isPassword = true;
-            this.password.Location = new System.Drawing.Point(187, 279);
+            this.password.Location = new System.Drawing.Point(31, 375);
             this.password.Margin = new System.Windows.Forms.Padding(4);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(312, 39);
+            this.password.Size = new System.Drawing.Size(312, 32);
             this.password.TabIndex = 1;
             this.password.Text = "zege";
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -113,10 +114,10 @@
             this.username.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username.ForeColor = System.Drawing.Color.Gainsboro;
             this.username.isPassword = false;
-            this.username.Location = new System.Drawing.Point(187, 209);
+            this.username.Location = new System.Drawing.Point(31, 305);
             this.username.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(312, 42);
+            this.username.Size = new System.Drawing.Size(312, 32);
             this.username.TabIndex = 0;
             this.username.Text = "zege";
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -127,7 +128,7 @@
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
             this.closeBtn.ImageActive = null;
-            this.closeBtn.Location = new System.Drawing.Point(665, 12);
+            this.closeBtn.Location = new System.Drawing.Point(343, 12);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(33, 28);
             this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -141,7 +142,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(290, 147);
+            this.label1.Location = new System.Drawing.Point(134, 227);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 26);
             this.label1.TabIndex = 43;
@@ -152,7 +153,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(227, 97);
+            this.label2.Location = new System.Drawing.Point(71, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(246, 39);
             this.label2.TabIndex = 44;
@@ -161,9 +162,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(48, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(581, 82);
+            this.pictureBox1.Size = new System.Drawing.Size(312, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
@@ -172,8 +173,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Chocolate;
-            this.label3.Location = new System.Drawing.Point(183, 185);
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(27, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 19);
             this.label3.TabIndex = 46;
@@ -183,19 +184,26 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(183, 256);
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.Location = new System.Drawing.Point(27, 352);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 19);
             this.label4.TabIndex = 47;
             this.label4.Text = "Password";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
-            this.ClientSize = new System.Drawing.Size(710, 422);
+            this.ClientSize = new System.Drawing.Size(386, 578);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -228,5 +236,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }

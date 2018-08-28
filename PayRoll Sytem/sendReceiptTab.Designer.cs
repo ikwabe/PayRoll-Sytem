@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ViewPayRoll = new Bunifu.Framework.UI.BunifuFlatButton();
             this.receiptDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,11 +40,15 @@
             this.sendReceiptBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.payRollDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.ViewPayRoll = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.information = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payRollDataGrid)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +61,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(862, 146);
             this.panel1.TabIndex = 0;
+            // 
+            // ViewPayRoll
+            // 
+            this.ViewPayRoll.Activecolor = System.Drawing.Color.ForestGreen;
+            this.ViewPayRoll.BackColor = System.Drawing.Color.ForestGreen;
+            this.ViewPayRoll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ViewPayRoll.BorderRadius = 5;
+            this.ViewPayRoll.ButtonText = "View Details";
+            this.ViewPayRoll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ViewPayRoll.DisabledColor = System.Drawing.Color.Gray;
+            this.ViewPayRoll.Iconcolor = System.Drawing.Color.Transparent;
+            this.ViewPayRoll.Iconimage = null;
+            this.ViewPayRoll.Iconimage_right = null;
+            this.ViewPayRoll.Iconimage_right_Selected = null;
+            this.ViewPayRoll.Iconimage_Selected = null;
+            this.ViewPayRoll.IconMarginLeft = 0;
+            this.ViewPayRoll.IconMarginRight = 0;
+            this.ViewPayRoll.IconRightVisible = true;
+            this.ViewPayRoll.IconRightZoom = 0D;
+            this.ViewPayRoll.IconVisible = true;
+            this.ViewPayRoll.IconZoom = 70D;
+            this.ViewPayRoll.IsTab = false;
+            this.ViewPayRoll.Location = new System.Drawing.Point(19, 71);
+            this.ViewPayRoll.Name = "ViewPayRoll";
+            this.ViewPayRoll.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.ViewPayRoll.OnHovercolor = System.Drawing.Color.Green;
+            this.ViewPayRoll.OnHoverTextColor = System.Drawing.Color.White;
+            this.ViewPayRoll.selected = false;
+            this.ViewPayRoll.Size = new System.Drawing.Size(254, 48);
+            this.ViewPayRoll.TabIndex = 48;
+            this.ViewPayRoll.Text = "View Details";
+            this.ViewPayRoll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ViewPayRoll.Textcolor = System.Drawing.Color.White;
+            this.ViewPayRoll.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewPayRoll.Click += new System.EventHandler(this.ViewPayRoll_Click);
             // 
             // receiptDate
             // 
@@ -90,7 +130,7 @@
             // 
             // emailSendProgressBar
             // 
-            this.emailSendProgressBar.BackColor = System.Drawing.Color.Silver;
+            this.emailSendProgressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
             this.emailSendProgressBar.BorderRadius = 5;
             this.emailSendProgressBar.Location = new System.Drawing.Point(19, 19);
             this.emailSendProgressBar.MaximumValue = 100;
@@ -138,7 +178,8 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.payRollDataGrid);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 146);
             this.panel3.Name = "panel3";
@@ -151,32 +192,32 @@
             this.payRollDataGrid.AllowUserToDeleteRows = false;
             this.payRollDataGrid.AllowUserToResizeColumns = false;
             this.payRollDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.payRollDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.payRollDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.payRollDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.payRollDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.payRollDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
             this.payRollDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.payRollDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payRollDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payRollDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.payRollDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.payRollDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.payRollDataGrid.DefaultCellStyle = dataGridViewCellStyle12;
             this.payRollDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.payRollDataGrid.DoubleBuffered = true;
             this.payRollDataGrid.EnableHeadersVisualStyles = false;
@@ -190,43 +231,38 @@
             this.payRollDataGrid.RowHeadersVisible = false;
             this.payRollDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.payRollDataGrid.ShowEditingIcon = false;
-            this.payRollDataGrid.Size = new System.Drawing.Size(862, 330);
+            this.payRollDataGrid.Size = new System.Drawing.Size(378, 330);
             this.payRollDataGrid.TabIndex = 3;
             // 
-            // ViewPayRoll
+            // panel4
             // 
-            this.ViewPayRoll.Activecolor = System.Drawing.Color.ForestGreen;
-            this.ViewPayRoll.BackColor = System.Drawing.Color.ForestGreen;
-            this.ViewPayRoll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ViewPayRoll.BorderRadius = 5;
-            this.ViewPayRoll.ButtonText = "View Details";
-            this.ViewPayRoll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ViewPayRoll.DisabledColor = System.Drawing.Color.Gray;
-            this.ViewPayRoll.Iconcolor = System.Drawing.Color.Transparent;
-            this.ViewPayRoll.Iconimage = null;
-            this.ViewPayRoll.Iconimage_right = null;
-            this.ViewPayRoll.Iconimage_right_Selected = null;
-            this.ViewPayRoll.Iconimage_Selected = null;
-            this.ViewPayRoll.IconMarginLeft = 0;
-            this.ViewPayRoll.IconMarginRight = 0;
-            this.ViewPayRoll.IconRightVisible = true;
-            this.ViewPayRoll.IconRightZoom = 0D;
-            this.ViewPayRoll.IconVisible = true;
-            this.ViewPayRoll.IconZoom = 70D;
-            this.ViewPayRoll.IsTab = false;
-            this.ViewPayRoll.Location = new System.Drawing.Point(19, 71);
-            this.ViewPayRoll.Name = "ViewPayRoll";
-            this.ViewPayRoll.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.ViewPayRoll.OnHovercolor = System.Drawing.Color.Green;
-            this.ViewPayRoll.OnHoverTextColor = System.Drawing.Color.White;
-            this.ViewPayRoll.selected = false;
-            this.ViewPayRoll.Size = new System.Drawing.Size(254, 48);
-            this.ViewPayRoll.TabIndex = 48;
-            this.ViewPayRoll.Text = "View Details";
-            this.ViewPayRoll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ViewPayRoll.Textcolor = System.Drawing.Color.White;
-            this.ViewPayRoll.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewPayRoll.Click += new System.EventHandler(this.ViewPayRoll_Click);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.information);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(378, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(484, 330);
+            this.panel4.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.payRollDataGrid);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(378, 330);
+            this.panel5.TabIndex = 5;
+            // 
+            // information
+            // 
+            this.information.AutoScroll = true;
+            this.information.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.information.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.information.Location = new System.Drawing.Point(0, 0);
+            this.information.Name = "information";
+            this.information.Size = new System.Drawing.Size(482, 328);
+            this.information.TabIndex = 0;
+            this.information.WrapContents = false;
             // 
             // sendReceiptTab
             // 
@@ -244,6 +280,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.payRollDataGrid)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -259,5 +297,8 @@
         private Bunifu.Framework.UI.BunifuCustomDataGrid payRollDataGrid;
         private Bunifu.Framework.UI.BunifuProgressBar emailSendProgressBar;
         private Bunifu.Framework.UI.BunifuFlatButton ViewPayRoll;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel information;
     }
 }

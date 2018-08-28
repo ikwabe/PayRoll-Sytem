@@ -28,11 +28,15 @@ namespace PayRoll_Sytem
         static void createDirectory()
         {
             string rootDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SEC Payroll";
+            string payrollDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\SEC PayRoll Records";
             try
             {
                 if (!Directory.Exists(rootDirectory)) { Directory.CreateDirectory(rootDirectory); }
                 if (!Directory.Exists(rootDirectory + "\\Receipts")) { Directory.CreateDirectory(rootDirectory + "\\Receipts"); }
-               
+
+                //directory for payrolls
+                if (!Directory.Exists(payrollDirectory)) { Directory.CreateDirectory(payrollDirectory); }
+
             }
             catch
             {
