@@ -140,6 +140,7 @@ namespace PayRoll_Sytem
                     for (int i = 0; i< table.Rows.Count;i++)
                     {
                         emailSendProgressBar.Value = i/4;
+
                         salarySlip.PreapareSalarySlip(table.Rows[i][2].ToString(),
                                             table.Rows[i][3].ToString(),
                                             table.Rows[i][5].ToString(),

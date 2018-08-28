@@ -345,7 +345,7 @@ namespace PayRoll_Sytem
 
 
 
-            using (FileStream file = new FileStream("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf", FileMode.Create))
+            using (FileStream file = new FileStream("C:/Users/" + Environment.UserName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
                 PdfWriter.GetInstance(pdfDoc, file);
