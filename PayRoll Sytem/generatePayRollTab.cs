@@ -471,7 +471,13 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadPayRoll = "select * from payroll where dateGenerated = '" + payRollDate.Text + "'";
+            string loadPayRoll = "select empFullName,empCode,deptCode,salaryCategory,"+
+                "scaleBase,Scalepercent,bankAccount,bankNAme,salaryBasic,allowanceAutoDepr,"+
+                "allowanceBicycle,LeaderTravelAll,cLimitTravel,postageExps,allowanceUtility,"+
+                "incomeTotal,incomeTaxable, tithe, itax,socialsecurityFund,HouseRent,MaafaFund,"+
+                "food, saccos, cashAndSalaryAdvance,NBC,motorvehicleLoan,furnitureLoan,HESLB,"+
+                "deductionOnReport, personalServing,NHIF,totalDeduction, SalaryNet, refunditax,"+
+                "paynet,position,email from payroll where dateGenerated = '" + payRollDate.Text + "'";
 
             MySqlCommand payroll = new MySqlCommand(loadPayRoll, con);
 
@@ -522,19 +528,32 @@ namespace PayRoll_Sytem
                         ws.Cells[1, 30] = "Deduction On Report";
                         ws.Cells[1, 31] = "Personal Serving";
                         ws.Cells[1, 32] = "NHIF";
-                        ws.Cells[1, 33] = "Salary Net";
-                        ws.Cells[1, 34] = "Refund i/Tax";
-                        ws.Cells[1, 35] = "Pay Net";
-                        ws.Cells[1, 36] = "Position";
-                        ws.Cells[1, 37] = "Employee Email";
+                        ws.Cells[1, 33] = "Total Deductions";
+                        ws.Cells[1, 34] = "Salary Net";
+                        ws.Cells[1, 35] = "Refund i/Tax";
+                        ws.Cells[1, 36] = "Pay Net";
+                        ws.Cells[1, 37] = "Position";
+                        ws.Cells[1, 38] = "Employee Email";
 
-                        for (int r = 0; r< 1; r++)
+                        //to insert the data at the first row
+                        for (int row = 0; row< 1; row++)
                         {
-                            for (int c = 0; c < payRollTable.Columns.Count; c++)
+                            for (int col = 0; col < payRollTable.Columns.Count; col++)
                             {
-                                ws.Cells[r+2, c+1] = payRollTable.Rows[r][c].ToString();
+                                ws.Cells[row+2, col+1] = payRollTable.Rows[row][col].ToString();
                             }
                         }
+
+
+                        //to insert data at the next rows
+                        for (int row = 2; row < payRollTable.Rows.Count; row++)
+                        {
+                            for (int col = 0; col < payRollTable.Columns.Count; col++)
+                            {
+                                ws.Cells[row + 1, col + 1] = payRollTable.Rows[row-1][col].ToString();
+                            }
+                        }
+
                         ws.SaveAs(save.FileName + ".xlsx", XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, true, XlSaveAsAccessMode.xlNoChange, XlSaveConflictResolution.xlLocalSessionChanges, Type.Missing, Type.Missing);
                         excel.Quit();
                     }
