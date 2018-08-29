@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Net.Mail;
 using System.Web;
+using System.Threading;
+using System.IO;
 
 namespace PayRoll_Sytem
 {
@@ -85,37 +87,47 @@ namespace PayRoll_Sytem
            
             sendInfo.AutoSize = true;
 
-            MailMessage mail = new MailMessage("ikwabe04@gmail.com", email, "TESTING THE SALARY SLIP EMAIL SENDER", "Habari Rafiki? Usishitushwe na ujumbe huu, tunajaribu system. Asante.");
-            SmtpClient client = new SmtpClient("smtp.gmail.com");
-            client.Port = 587;
-
-            client.Credentials = new System.Net.NetworkCredential("ikwabe04@gmail.com", "mikunjoyamwili");
-            client.EnableSsl = true;
-
-            Attachment file = new Attachment("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf");
-            file.Name = "Salary Slip for " + DateTime.Now.ToString("MMMM yyyy") + ".pdf";
-            mail.Attachments.Add(file);
-            try
+            using (MailMessage mail = new MailMessage("ikwabe04@gmail.com", email, "TESTING THE SALARY SLIP EMAIL SENDER", "Habari Rafiki? Usishitushwe na ujumbe huu, tunajaribu system. Asante."))
+            using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
+            using (Attachment file = new Attachment("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf"))
             {
-                client.Send(mail);
-                Login.RecordUserActivity("Sent the Salary Slip to " + email);
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential("ikwabe04@gmail.com", "mikunjoyamwili");
+                client.EnableSsl = true;
 
-                sendInfo.ForeColor = Color.LightGreen;
-                sendInfo.Text = "Email sent to: " + email + "     (" + DateTime.Now.ToLongTimeString() + ")";
-                information.Controls.Add(sendInfo);
-            }
-            catch
-            {
-                sendInfo.ForeColor = Color.Orange;
-                sendInfo.Text = "Email NOT sent to: " + email + "     ("+DateTime.Now.ToLongTimeString()+")";
-                information.Controls.Add(sendInfo);
+                file.Name = "Salary Slip for " + DateTime.Now.ToString("MMMM yyyy") + ".pdf";
+                mail.Attachments.Add(file);
+                try
+                {
+                    client.Send(mail);
+                    Login.RecordUserActivity("Sent the Salary Slip to " + email);
+
+                    sendInfo.ForeColor = Color.LightGreen;
+                    sendInfo.Text = "Email sent to: " + email + "     (" + DateTime.Now.ToLongTimeString() + ")";
+                    information.Controls.Add(sendInfo);
+                }
+                catch
+                {
+                    sendInfo.ForeColor = Color.Orange;
+                    sendInfo.Text = "Email NOT sent to: " + email + "     (" + DateTime.Now.ToLongTimeString() + ")";
+                    information.Controls.Add(sendInfo);
+                }
             }
 
 
         }
 
+        Label done;
         private void sendReceiptBtn_Click(object sender, EventArgs e)
         {
+            
+            label2.Visible = true;
+
+            done = new Label();
+            done.Font = new Font("Calibri", 11);
+            sendInfo.ForeColor = Color.DarkGreen;
+            done.AutoSize = true;
+
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
             string getSlipDetails = "select * from payroll where dateGenerated = '" + receiptDate.Text + "'";
@@ -135,60 +147,65 @@ namespace PayRoll_Sytem
 
                 if (table.Rows.Count > 0)
                 {
-                    emailSendProgressBar.MaximumValue = table.Rows.Count;
-                    emailSendProgressBar.Visible = true;
+                   
+                    
                     for (int i = 0; i< table.Rows.Count;i++)
                     {
-                        emailSendProgressBar.Value = i/4;
+                        
 
                         salarySlip.PreapareSalarySlip(table.Rows[i][2].ToString(),
                                             table.Rows[i][3].ToString(),
                                             table.Rows[i][5].ToString(),
                                             table.Rows[i][37].ToString(),
                                             table.Rows[i][7].ToString(),
-                                            table.Rows[i][6].ToString(),
+                                            string.Format("{0:n}", table.Rows[i][6]),
                                             DateTime.Now.ToShortDateString().Substring(6),
                                             DateTime.Now.ToShortDateString(),
-                                            table.Rows[i][10].ToString(),
-                                            table.Rows[i][11].ToString(),
-                                            table.Rows[i][12].ToString(),
-                                            table.Rows[i][13].ToString(),
-                                            table.Rows[i][14].ToString(),
-                                            table.Rows[i][15].ToString(),
-                                            table.Rows[i][16].ToString(),
-                                            table.Rows[i][17].ToString(),
-                                            table.Rows[i][18].ToString(),
-                                            table.Rows[i][20].ToString(),
-                                            table.Rows[i][19].ToString(),
-                                            table.Rows[i][21].ToString(),
-                                            table.Rows[i][22].ToString(),
-                                            table.Rows[i][23].ToString(),
-                                            table.Rows[i][24].ToString(),
-                                            table.Rows[i][25].ToString(),
-                                            table.Rows[i][26].ToString(),
-                                            table.Rows[i][27].ToString(),
-                                            table.Rows[i][30].ToString(),
-                                            table.Rows[i][29].ToString(),
-                                            table.Rows[i][28].ToString(),
-                                            table.Rows[i][31].ToString(),
-                                            table.Rows[i][32].ToString(),
-                                            table.Rows[i][33].ToString(),
-                                            table.Rows[i][39].ToString(),
-                                            table.Rows[i][34].ToString(),
-                                            table.Rows[i][35].ToString(),
-                                            table.Rows[i][36].ToString());
-
-                        sendEmail(table.Rows[i][38].ToString());  
+                                            string.Format("{0:n}", table.Rows[i][10]),
+                                            string.Format("{0:n}", table.Rows[i][11]),
+                                            string.Format("{0:n}", table.Rows[i][12]),
+                                            string.Format("{0:n}", table.Rows[i][13]),
+                                            string.Format("{0:n}", table.Rows[i][14]),
+                                            string.Format("{0:n}", table.Rows[i][15]),
+                                            string.Format("{0:n}", table.Rows[i][16]),
+                                            string.Format("{0:n}", table.Rows[i][17]),
+                                            string.Format("{0:n}", table.Rows[i][18]),
+                                            string.Format("{0:n}", table.Rows[i][20]),
+                                            string.Format("{0:n}", table.Rows[i][19]),
+                                            string.Format("{0:n}", table.Rows[i][21]),
+                                            string.Format("{0:n}", table.Rows[i][22]),
+                                            string.Format("{0:n}", table.Rows[i][23]),
+                                            string.Format("{0:n}", table.Rows[i][24]),
+                                            string.Format("{0:n}", table.Rows[i][25]),
+                                            string.Format("{0:n}", table.Rows[i][26]),
+                                            string.Format("{0:n}", table.Rows[i][27]),
+                                            string.Format("{0:n}", table.Rows[i][30]),
+                                            string.Format("{0:n}", table.Rows[i][29]),
+                                            string.Format("{0:n}", table.Rows[i][28]),
+                                            string.Format("{0:n}", table.Rows[i][31]),
+                                            string.Format("{0:n}", table.Rows[i][32]),
+                                            string.Format("{0:n}", table.Rows[i][33]),
+                                            string.Format("{0:n}", table.Rows[i][39]),
+                                            string.Format("{0:n}", table.Rows[i][34]),
+                                            string.Format("{0:n}", table.Rows[i][35]),
+                                            string.Format("{0:n}", table.Rows[i][36]));
+                        
+                        sendEmail(table.Rows[i][38].ToString()); 
                     }
-                    emailSendProgressBar.Visible = false;
+
+                    done.Text = "DONE!    (" + DateTime.Now.ToLongTimeString() + ")";
+                    information.Controls.Add(done);
+                    label2.Visible = false;
                 }
                 else
                 {
+                    label2.Visible = false;
                     MessageBox.Show("Sorry, The Payroll for this Month is not present. Please check for another Month.");
                 }
             }
             catch (MySqlException ex)
             {
+                label2.Visible = false;
                 MessageBox.Show(ex.Message);
             }
             con.Close();
@@ -198,5 +215,7 @@ namespace PayRoll_Sytem
         {
             getGeneratedPayRoll();
         }
+
+       
     }
 }

@@ -218,14 +218,12 @@ namespace PayRoll_Sytem
         }
 
        
-       
-
-
-
         private void printreceiptTab_Load(object sender, EventArgs e)
         {
+
             LoadEmployee();
             payRollDate.CustomFormat = "MMMM yyyy";
+
         }
 
         private void searchText_OnValueChanged(object sender, EventArgs e)

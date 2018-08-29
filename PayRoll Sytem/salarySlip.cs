@@ -10,8 +10,10 @@ using iTextSharp.text;
 using System.IO;
 namespace PayRoll_Sytem
 {
+    
     class salarySlip
     {
+        
         //the function to create the salary slip
         public static void PreapareSalarySlip(string name, string ID, string category,
             string position, string scale,
@@ -28,7 +30,7 @@ namespace PayRoll_Sytem
             string NHIFs, string totalDedu, string IncBefore,
             string taxRef, string IncAft)
         {
-
+            
             iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(@"C:\Users\Shadrack Ikwabe\Pictures\LOGO\Church_logo.png");
             img.ScaleAbsolute(10f, 60f);
 
@@ -345,7 +347,8 @@ namespace PayRoll_Sytem
 
 
 
-            using (FileStream file = new FileStream("C:/Users/" + Environment.UserName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf", FileMode.Create))
+
+            using (FileStream file = new FileStream("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
                 PdfWriter.GetInstance(pdfDoc, file);
@@ -369,8 +372,6 @@ namespace PayRoll_Sytem
                 pdfDoc.Close();
                 file.Close();
             }
-
-
-        }
+            }
     }
 }
