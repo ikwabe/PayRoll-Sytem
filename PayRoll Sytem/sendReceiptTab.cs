@@ -123,9 +123,10 @@ namespace PayRoll_Sytem
             
             label2.Visible = true;
 
+            //A label for done 
             done = new Label();
-            done.Font = new Font("Calibri", 11);
-            sendInfo.ForeColor = Color.DarkGreen;
+            done.Font = new Font("Calibri", 12,FontStyle.Bold);
+            done.ForeColor = Color.LimeGreen;
             done.AutoSize = true;
 
             MySqlConnection con = new MySqlConnection();
