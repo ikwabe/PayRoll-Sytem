@@ -219,11 +219,12 @@
             this.userCategory.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userCategory.DisabledColor = System.Drawing.Color.Gray;
+            this.userCategory.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userCategory.ForeColor = System.Drawing.Color.White;
             this.userCategory.Items = new string[] {
-        "Treasurer",
-        "Administrator",
-        "Accountant"};
+        "TREASURER",
+        "ADMINSTRATOR",
+        "ACCOUNTANT"};
             this.userCategory.Location = new System.Drawing.Point(333, 256);
             this.userCategory.Name = "userCategory";
             this.userCategory.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));

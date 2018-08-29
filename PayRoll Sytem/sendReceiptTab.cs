@@ -13,6 +13,7 @@ using System.Web;
 using System.Threading;
 using System.IO;
 
+
 namespace PayRoll_Sytem
 {
     public partial class sendReceiptTab : UserControl
@@ -91,6 +92,7 @@ namespace PayRoll_Sytem
             using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
             using (Attachment file = new Attachment("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf"))
             {
+
                 client.Port = 587;
                 client.Credentials = new System.Net.NetworkCredential("ikwabe04@gmail.com", "mikunjoyamwili");
                 client.EnableSsl = true;
