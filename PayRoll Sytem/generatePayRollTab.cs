@@ -366,7 +366,7 @@ namespace PayRoll_Sytem
                           
                             deductionTotal = dductionTotal + socialSecurityFund + deductionOnAccount + HESLBLoan + houseRent + NHIF + tithe + i_Tax;
 
-                            MessageBox.Show(Emptable.Rows[i][4].ToString() + " " + deductionTotal);
+                           
 
                             salaryNet = incomeTotal - deductionTotal;
 
