@@ -120,6 +120,7 @@ namespace PayRoll_Sytem
         }
 
         Label done;
+        int yearOfService;
         private void sendReceiptBtn_Click(object sender, EventArgs e)
         {
             
@@ -154,7 +155,23 @@ namespace PayRoll_Sytem
                     
                     for (int i = 0; i< table.Rows.Count;i++)
                     {
+                        string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[i][3].ToString() + "' ";
+
+                        MySqlCommand com2 = new MySqlCommand(getYear, con);
+
+                        DataTable tab = new DataTable();
+
+                        da = new MySqlDataAdapter(com2);
+                        da.Fill(tab);
+                        da.Dispose();
                         
+                        for(int j = 0; j< tab.Rows.Count; j++)
+                        {
+                            
+                            yearOfService = int.Parse(DateTime.Now.ToShortDateString().Substring(6)) - int.Parse(tab.Rows[j][0].ToString().Substring(6));
+
+                        }
+
 
                         salarySlip.PreapareSalarySlip(table.Rows[i][2].ToString(),
                                             table.Rows[i][3].ToString(),
@@ -162,7 +179,7 @@ namespace PayRoll_Sytem
                                             table.Rows[i][37].ToString(),
                                             table.Rows[i][7].ToString(),
                                             string.Format("{0:n}", table.Rows[i][6]),
-                                            DateTime.Now.ToShortDateString().Substring(6),
+                                            yearOfService.ToString(),
                                             DateTime.Now.ToShortDateString(),
                                             string.Format("{0:n}", table.Rows[i][10]),
                                             string.Format("{0:n}", table.Rows[i][11]),
@@ -192,8 +209,8 @@ namespace PayRoll_Sytem
                                             string.Format("{0:n}", table.Rows[i][34]),
                                             string.Format("{0:n}", table.Rows[i][35]),
                                             string.Format("{0:n}", table.Rows[i][36]));
-                        
-                        sendEmail(table.Rows[i][38].ToString()); 
+
+                        sendEmail(table.Rows[i][38].ToString());
                     }
 
                     done.Text = "DONE!    (" + DateTime.Now.ToLongTimeString() + ")";

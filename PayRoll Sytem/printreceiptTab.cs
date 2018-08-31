@@ -157,14 +157,25 @@ namespace PayRoll_Sytem
 
                     if(table.Rows.Count > 0)
                     {
-                       
+                        string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[0][3].ToString() + "' ";
+
+                        MySqlCommand com2 = new MySqlCommand(getYear, con);
+
+                        DataTable tab = new DataTable();
+
+                        da = new MySqlDataAdapter(com2);
+                        da.Fill(tab);da.Dispose();
+
+
+                        int yearOfService = int.Parse(DateTime.Now.ToShortDateString().Substring(6)) - int.Parse(tab.Rows[0][0].ToString().Substring(6));
+                     
                         salarySlip.PreapareSalarySlip(table.Rows[0][2].ToString(),
                                             table.Rows[0][3].ToString(),
                                             table.Rows[0][5].ToString(),
                                             table.Rows[0][37].ToString(),
                                             table.Rows[0][7].ToString(),
                                             string.Format("{0:n}", table.Rows[0][6]),
-                                            DateTime.Now.ToShortDateString().Substring(6),
+                                            yearOfService.ToString(),
                                             DateTime.Now.ToShortDateString(),
                                             string.Format("{0:n}", table.Rows[0][10]),
                                             string.Format("{0:n}", table.Rows[0][11]),

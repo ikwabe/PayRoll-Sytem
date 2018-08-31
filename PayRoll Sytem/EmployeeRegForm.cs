@@ -255,7 +255,7 @@ namespace PayRoll_Sytem
                             "','" + positionTxt.Text.ToUpper() +
                             "','" + bankAcountNumberTxt.Text.ToUpper() +
                             "','"+bankNameTxt.Text.ToUpper()+
-                            "','"+DateTime.Now+
+                            "','"+employedDate.Text+
                             "','"+employeeStatus.Text.ToUpper()+"')";
 
                         string registerEmployee = "insert into employee(fname,mname,lname,empCode,DeptCode,DOB,salaryCategory,scaleBase,scalePercent,employeeEmail,phoneNumber,position,bankAccount,bankName,dateRegistered,statuse) " + value;
@@ -406,7 +406,7 @@ namespace PayRoll_Sytem
                             positionTxt.Text = table.Rows[0][12].ToString();
                             bankAcountNumberTxt.Text = table.Rows[0][13].ToString();
                             bankNameTxt.Text = table.Rows[0][14].ToString();
-                            dateRegistered = table.Rows[0][15].ToString();
+                            employedDate.Text = table.Rows[0][15].ToString();
                             empCode = empCodeTxt.Text;
 
 
@@ -492,7 +492,7 @@ namespace PayRoll_Sytem
                             "', position = '" + positionTxt.Text.ToUpper() +
                             "', bankAccount = '" + bankAcountNumberTxt.Text.ToUpper() +
                             "', bankname = '" + bankNameTxt.Text.ToUpper() +
-                            "', dateRegistered = '" + dateRegistered +
+                            "', dateRegistered = '" + employedDate.Text +
                             "', employee.statuse = '" + employeeStatus.Text.ToUpper() + "' where employee.empID = '" + empID + "';" +
                             " SET foreign_key_checks = 1;";
 
