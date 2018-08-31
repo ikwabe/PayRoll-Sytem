@@ -71,8 +71,8 @@ namespace PayRoll_Sytem
                     MySqlConnection con = new MySqlConnection();
                     con.ConnectionString = Home.DBconnection;
 
-                    string loadAllowance = "select deptID from department where deptName = '" + departmentName + "'";
-                    MySqlCommand com = new MySqlCommand(loadAllowance, con);
+                    string loadDepartment = "select deptID,deptCode from department where deptName = '" + departmentName + "'";
+                    MySqlCommand com = new MySqlCommand(loadDepartment, con);
                     MySqlDataAdapter da;
                     DataTable table = new DataTable();
 
@@ -85,6 +85,7 @@ namespace PayRoll_Sytem
                         if (table.Rows.Count > 0)
                         {
                             departmentNumber = table.Rows[0][0].ToString();
+                            deptCode.Text = table.Rows[0][1].ToString().Substring(4);
                         }
                     }
                     catch (MySqlException ex)
@@ -156,9 +157,9 @@ namespace PayRoll_Sytem
         {
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
-            if (departmentNumber != null)
+            if (!string.IsNullOrWhiteSpace(deptCode.Text) && !string.IsNullOrWhiteSpace(editedDepartmentTxt.Text) && departmentNumber != null)
             {
-                string updateDepartment = "update department set deptName = '" + editedDepartmentTxt.Text.ToUpper() + "' where deptID = '" + departmentNumber + "'";
+                string updateDepartment = "update department set deptName = '" + editedDepartmentTxt.Text.ToUpper() + "', deptCode = 'SEC-"+deptCode.Text.ToUpper()+"' where deptID = '" + departmentNumber + "'";
                 MySqlCommand com = new MySqlCommand(updateDepartment, con);
 
                 MySqlDataReader rd;
@@ -173,6 +174,7 @@ namespace PayRoll_Sytem
                     loadAllTimer.Start();
                     departmentNumber = null;
                     editedDepartmentTxt.Text = "";
+                    deptCode.Text = "";
                     MessageBox.Show("Department updated");
 
                 }
@@ -184,7 +186,7 @@ namespace PayRoll_Sytem
             }
             else
             {
-                MessageBox.Show("Please select the Department from the list");
+                MessageBox.Show("Please select the Department from the list and make sure the fields are not empty.");
             }
         }
 
@@ -210,6 +212,7 @@ namespace PayRoll_Sytem
 
                     departmentNumber = null;
                     editedDepartmentTxt.Text = "";
+                    deptCode.Text = "";
                     MessageBox.Show("Department deleted Successful!");
 
                 }

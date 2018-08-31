@@ -166,6 +166,7 @@ namespace PayRoll_Sytem
                     {
                         for (int i = 0; i < Emptable.Rows.Count; i++)
                         {
+                            resetVariables();
                             salaryBasic = double.Parse(Emptable.Rows[i][8].ToString()) * (double.Parse(Emptable.Rows[i][9].ToString()) / 100);
                             allowanceUtility = salaryBasic * 1.5 / 12;
 
@@ -196,26 +197,32 @@ namespace PayRoll_Sytem
                                 da.Fill(allowTable1);
                                 da.Dispose();
 
-                                //for Auto Depreciation
-                                if (allowTable1.Rows[j][0].ToString() == "AUTO DEPRECIATION")
-                                    allowanceAutDepr = (double)allowTable.Rows[j][3];
-                                //Travel D/Leaders
-                                if(allowTable1.Rows[j][0].ToString() == "TRAVEL D/LEADER")
-                                    travelDLeaders = (double)allowTable.Rows[j][3];
-                                //Travel C/Limit
-                                if (allowTable1.Rows[j][0].ToString() == "TRAVEL C/LIMIT")
-                                    travelCLimit = (double)allowTable.Rows[j][3];
-                                //Postage Exps
-                                if (allowTable1.Rows[j][0].ToString() == "POSTAGE EXPS")
-                                    postageExps = (double)allowTable.Rows[j][3];
-                                //Bicycle Allowance
-                                if (allowTable1.Rows[j][0].ToString() == "BICYCLE ALLOWANCE")
-                                    bicycleAllowance = (double)allowTable.Rows[j][3];
+
+                                for(int x = 0; x< allowTable1.Rows.Count; x++)
+                                {
+                                    //for Auto Depreciation
+                                    if (allowTable1.Rows[x][0].ToString() == "AUTO DEPRECIATION")
+                                        allowanceAutDepr = (double)allowTable.Rows[j][3];
+                                    //Travel D/Leaders
+                                    if (allowTable1.Rows[x][0].ToString() == "TRAVEL D/LEADER")
+                                        travelDLeaders = (double)allowTable.Rows[j][3];
+                                    //Travel C/Limit
+                                    if (allowTable1.Rows[x][0].ToString() == "TRAVEL C/LIMIT")
+                                        travelCLimit = (double)allowTable.Rows[j][3];
+                                    //Postage Exps
+                                    if (allowTable1.Rows[x][0].ToString() == "POSTAGE EXPS")
+                                        postageExps = (double)allowTable.Rows[j][3];
+                                    //Bicycle Allowance
+                                    if (allowTable1.Rows[x][0].ToString() == "BICYCLE ALLOWANCE")
+                                        bicycleAllowance = (double)allowTable.Rows[j][3];
+                                }
 
                             }
 
 
                             incomeTotal = salaryBasic + allowanceTotal + allowanceUtility;
+
+                            
 
                             //geting the deductions for the employee
                             string getDeduction = "select * from employeededuction where empCode = '" + Emptable.Rows[i][4] + "' and dateForDeduction = '"+payRollDate.Text+ "' or deductiontype = 'CONSTANT'";
@@ -277,8 +284,9 @@ namespace PayRoll_Sytem
                            
                             //check if an employee has social security fund, house rent and HESLB deduction
 
-                            string checkStatusForDEduction = "select deductionID,percentage from employeededuction where statuse = 'YES' and dateForDeduction = '" + payRollDate.Text + "' ";
+                            string checkStatusForDEduction = "select deductionID,percentage from employeededuction where statuse = 'YES' and dateForDeduction = '" + payRollDate.Text + "' and empCode = '"+Emptable.Rows[i][4].ToString()+"'";
 
+                            //string checkStatusForDEduction = "select concat(fname,' ',lname),deductionID,percentage from employee join employeededuction on employee.empCode = employeededuction.empCode where employeededuction.statuse = 'YES' and employeededuction.dateForDeduction = '"+ payRollDate.Text + "'";
                             MySqlCommand deductionCom2 = new MySqlCommand(checkStatusForDEduction, con);
 
                             System.Data.DataTable deductionTableStatus = new System.Data.DataTable();
@@ -340,7 +348,7 @@ namespace PayRoll_Sytem
 
                             incomeTaxable = salaryBasic + allowanceUtility - socialSecurityFund;
 
-                            tithe = incomeTotal * 0.1;
+                            tithe = salaryBasic * 0.1;
 
                            
                             if (incomeTaxable < 170000)
@@ -383,10 +391,10 @@ namespace PayRoll_Sytem
 
                             rd = generatePayR.ExecuteReader();
                             rd.Close();
-                            Login.RecordUserActivity("Genarated the payroll");
-                            resetVariables();
+                              
                         }
 
+                        Login.RecordUserActivity("Genarated the payroll");
                         //show the Pay-Roll
                         getGeneratedPayRoll();
                     }
@@ -397,8 +405,6 @@ namespace PayRoll_Sytem
             {
                 MessageBox.Show(ex.Message);
             }
-
-
 
         }
 

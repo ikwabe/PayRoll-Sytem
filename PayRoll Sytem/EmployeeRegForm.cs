@@ -76,7 +76,8 @@ namespace PayRoll_Sytem
         Timer genEmpAndScaleBase;
         private void EmployeeRegForm_Load(object sender, EventArgs e)
         {
-            
+            LoadDepartment();
+            deptCode = null;
             this.WindowState = FormWindowState.Maximized;
             searchPanel.Visible = false;
 
@@ -98,8 +99,6 @@ namespace PayRoll_Sytem
 
             //check the email
             checkEmail(emailTxt.Text);
-
-
         }
 
 
@@ -230,7 +229,8 @@ namespace PayRoll_Sytem
                 || positionTxt.Text == ""
                 || bankNameTxt.Text == ""
                 || bankAcountNumberTxt.Text == ""
-                || employeeStatus.SelectedIndex == 0)
+                || employeeStatus.SelectedIndex == 0
+                || deptCode == null)
             {
                 MessageBox.Show("Please, fill all the fields..!");
             }
@@ -246,7 +246,7 @@ namespace PayRoll_Sytem
                         string value = "values('" + firstNameTxt.Text.ToUpper() + "','" + middleNameTxt.Text.ToUpper() +
                             "','" + lastNameTxt.Text.ToUpper() +
                             "','" + empCodeTxt.Text.ToUpper() +
-                            "','ASTREAS01','" + dateOfBirth.Text +
+                            "','"+deptCode+"','" + dateOfBirth.Text +
                             "','" + salaryCategory.selectedValue +
                             "','" + scaleBaseTxt.Text +
                             "','" + scalePercentTxt.Text +
@@ -294,6 +294,35 @@ namespace PayRoll_Sytem
            
         }
 
+        private void LoadDepartment()
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+            string department = " select upper(deptName) from department ";
+
+            MySqlCommand com = new MySqlCommand(department, con);
+
+            try
+            {
+                con.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter(department, con);
+                DataSet ds = new DataSet();
+                da.Fill(ds, "Select");
+                com.ExecuteNonQuery();
+                departmentCombo.DisplayMember = "upper(deptName)";
+                departmentCombo.DataSource = ds.Tables["Select"];
+                da.Dispose();
+                departmentCombo.SelectedIndex = -1;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
+
+        }
+
+
         private void searchText_OnValueChanged(object sender, EventArgs e)
         {
             MySqlConnection con = new MySqlConnection();
@@ -319,8 +348,7 @@ namespace PayRoll_Sytem
             con.Close();
         }
 
-       
-
+     
         private void registerNewEmpBtn_Click(object sender, EventArgs e)
         {
             clearFields();
@@ -425,7 +453,8 @@ namespace PayRoll_Sytem
                 || positionTxt.Text == ""
                 || bankNameTxt.Text == ""
                 || bankAcountNumberTxt.Text == ""
-                || employeeStatus.SelectedIndex == 0)
+                || employeeStatus.SelectedIndex == 0
+                || empCode == null)
             {
                 MessageBox.Show("Please, fill all the fields..!");
             }
@@ -443,10 +472,17 @@ namespace PayRoll_Sytem
                         con.ConnectionString = Home.DBconnection;
 
                        
-                        string updateEmployee = "update employee set fname = '" + firstNameTxt.Text.ToUpper() + 
+ string updateEmployee = "SET foreign_key_checks = 0;" +
+                            " update employee" +
+                            " JOIN employeeallowance ON employeeallowance.empCode = employee.empCode " +
+                            " JOIN employeededuction ON employeededuction.empCode = employee.empCode " +
+                            " set fname = '" + firstNameTxt.Text.ToUpper() +
                             "', mname = '" + middleNameTxt.Text.ToUpper() +
                             "', lname = '" + lastNameTxt.Text.ToUpper() +
-                            "', empCode = '" + empCodeTxt.Text.ToUpper() +
+                            "', employee.empCode = '" + empCodeTxt.Text.ToUpper() +
+                            "', employeeallowance.empCode = '" + empCodeTxt.Text.ToUpper() +
+                            "', employeededuction.empCode = '" + empCodeTxt.Text.ToUpper() +
+                            "', DeptCode = '" + deptCode +
                             "', DOB = '" + dateOfBirth.Text +
                             "', salaryCategory = '" + salaryCategory.selectedValue +
                             "', scaleBase = '" + scaleBaseTxt.Text +
@@ -456,8 +492,9 @@ namespace PayRoll_Sytem
                             "', position = '" + positionTxt.Text.ToUpper() +
                             "', bankAccount = '" + bankAcountNumberTxt.Text.ToUpper() +
                             "', bankname = '" + bankNameTxt.Text.ToUpper() +
-                            "', dateRegistered = '" + dateRegistered + 
-                            "', statuse = '"+employeeStatus.Text.ToUpper()+"' where EmpID = '"+empID+"'";
+                            "', dateRegistered = '" + dateRegistered +
+                            "', employee.statuse = '" + employeeStatus.Text.ToUpper() + "' where employee.empID = '" + empID + "';" +
+                            " SET foreign_key_checks = 1;";
 
                         MySqlCommand com = new MySqlCommand(updateEmployee, con);
                         MySqlDataReader rd;
@@ -476,8 +513,6 @@ namespace PayRoll_Sytem
                             empID = null;
                             MessageBox.Show("Employee Updated Successful");
 
-                           
-
                         }
                         catch (MySqlException ex)
                         {
@@ -492,11 +527,9 @@ namespace PayRoll_Sytem
                         break;
                 }
 
-
             }
 
         }
-
 
         private void deleteEmpBtn_Click(object sender, EventArgs e)
         {
@@ -506,7 +539,15 @@ namespace PayRoll_Sytem
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = Home.DBconnection;
 
-                string delete = "delete from employee where empID = '" + empID + "'";
+              
+                string delete = "SET foreign_key_checks = 0;"+
+                    " DELETE a.*, e.*, d.* "+
+                    " FROM employee e "+
+                    " JOIN employeeallowance a ON a.empCode = e.empCode "+
+                    " JOIN employeededuction d ON d.empCode = a.empCode "+
+                    " WHERE d.empCode = '"+empCodeTxt.Text+"';"+
+                    " SET foreign_key_checks = 1;";
+
 
                 MySqlCommand com = new MySqlCommand(delete, con);
                 MySqlDataReader rd;
@@ -524,6 +565,7 @@ namespace PayRoll_Sytem
                     LoadEmployee();
                     empID = null;
                     MessageBox.Show("Employee Deleted Successful");
+
                 }
                 catch (MySqlException ex)
                 {
@@ -536,6 +578,43 @@ namespace PayRoll_Sytem
            if(empID == null && check == false)
                 MessageBox.Show("Please, select the name of an employee before deletion!");
             
+        }
+
+
+        string deptCode = null;
+        private void departmentCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string getDeptId = "select deptCode from department where deptName = '" + departmentCombo.Text + "'";
+
+            MySqlCommand com = new MySqlCommand(getDeptId, con);
+
+            MySqlDataAdapter da;
+            DataTable table = new DataTable();
+
+            try
+            {
+                con.Open();
+                da = new MySqlDataAdapter(com);
+                da.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    deptCode = table.Rows[0][0].ToString();
+                   
+                }
+                else
+                {
+                    deptCode = null;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            con.Close();
         }
     }
 }

@@ -70,9 +70,9 @@ namespace PayRoll_Sytem
             con.ConnectionString = Home.DBconnection;
 
            
-            if (!string.IsNullOrWhiteSpace(newDepartmentTxt.Text))
+            if (!string.IsNullOrWhiteSpace(newDepartmentTxt.Text) && !string.IsNullOrWhiteSpace(deptCode.Text))
             {
-                string registerNewDepartment = "insert into department(deptCode,deptName) values('" + newDepartmentTxt.Text.ToUpper().Substring(0, 3) + "01" + "','" + newDepartmentTxt.Text.ToUpper() + "')";
+                string registerNewDepartment = "insert into department(deptCode,deptName) values('SEC-"+deptCode.Text.ToUpper()+"','" + newDepartmentTxt.Text.ToUpper() + "')";
 
                 MySqlCommand com = new MySqlCommand(registerNewDepartment, con);
 
@@ -99,7 +99,7 @@ namespace PayRoll_Sytem
             }
             else
             {
-                MessageBox.Show("Please Write the name of the new Department in the Textbox.");
+                MessageBox.Show("Please Write the name of the new Department and its ID on the textboxes");
             }
         }
 

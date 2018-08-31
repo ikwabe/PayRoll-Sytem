@@ -34,6 +34,9 @@
             this.newDepartmentTxt = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deptCode = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.refreshBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addDepartmentBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.searchPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,7 +44,6 @@
             this.searchResultDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.refreshBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             this.searchPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,7 +65,7 @@
             this.newDepartmentTxt.Location = new System.Drawing.Point(157, 156);
             this.newDepartmentTxt.Margin = new System.Windows.Forms.Padding(4);
             this.newDepartmentTxt.Name = "newDepartmentTxt";
-            this.newDepartmentTxt.Size = new System.Drawing.Size(454, 39);
+            this.newDepartmentTxt.Size = new System.Drawing.Size(296, 39);
             this.newDepartmentTxt.TabIndex = 36;
             this.newDepartmentTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -72,7 +74,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(241, 118);
+            this.label2.Location = new System.Drawing.Point(153, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(281, 23);
             this.label2.TabIndex = 37;
@@ -80,6 +82,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.deptCode);
             this.panel2.Controls.Add(this.refreshBtn);
             this.panel2.Controls.Add(this.addDepartmentBtn);
             this.panel2.Controls.Add(this.newDepartmentTxt);
@@ -87,8 +91,72 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(316, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(525, 476);
+            this.panel2.Size = new System.Drawing.Size(705, 476);
             this.panel2.TabIndex = 34;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(497, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 23);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Type a Department ID here";
+            // 
+            // deptCode
+            // 
+            this.deptCode.BorderColorFocused = System.Drawing.Color.DarkGray;
+            this.deptCode.BorderColorIdle = System.Drawing.Color.DarkGray;
+            this.deptCode.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.deptCode.BorderThickness = 1;
+            this.deptCode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.deptCode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deptCode.ForeColor = System.Drawing.Color.Gainsboro;
+            this.deptCode.isPassword = false;
+            this.deptCode.Location = new System.Drawing.Point(501, 156);
+            this.deptCode.Margin = new System.Windows.Forms.Padding(4);
+            this.deptCode.Name = "deptCode";
+            this.deptCode.Size = new System.Drawing.Size(270, 39);
+            this.deptCode.TabIndex = 57;
+            this.deptCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.refreshBtn.BorderRadius = 5;
+            this.refreshBtn.ButtonText = "Refresh";
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.refreshBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.refreshBtn.Iconimage = null;
+            this.refreshBtn.Iconimage_right = null;
+            this.refreshBtn.Iconimage_right_Selected = null;
+            this.refreshBtn.Iconimage_Selected = null;
+            this.refreshBtn.IconMarginLeft = 0;
+            this.refreshBtn.IconMarginRight = 0;
+            this.refreshBtn.IconRightVisible = true;
+            this.refreshBtn.IconRightZoom = 0D;
+            this.refreshBtn.IconVisible = true;
+            this.refreshBtn.IconZoom = 70D;
+            this.refreshBtn.IsTab = false;
+            this.refreshBtn.Location = new System.Drawing.Point(17, 28);
+            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            this.refreshBtn.OnHovercolor = System.Drawing.Color.Orange;
+            this.refreshBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.refreshBtn.selected = false;
+            this.refreshBtn.Size = new System.Drawing.Size(112, 28);
+            this.refreshBtn.TabIndex = 56;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.refreshBtn.Textcolor = System.Drawing.Color.White;
+            this.refreshBtn.TextFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // addDepartmentBtn
             // 
@@ -111,7 +179,7 @@
             this.addDepartmentBtn.IconVisible = true;
             this.addDepartmentBtn.IconZoom = 70D;
             this.addDepartmentBtn.IsTab = false;
-            this.addDepartmentBtn.Location = new System.Drawing.Point(270, 215);
+            this.addDepartmentBtn.Location = new System.Drawing.Point(363, 214);
             this.addDepartmentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addDepartmentBtn.Name = "addDepartmentBtn";
             this.addDepartmentBtn.Normalcolor = System.Drawing.Color.ForestGreen;
@@ -216,42 +284,6 @@
             this.label1.TabIndex = 39;
             this.label1.Text = "Registered Departments list";
             // 
-            // refreshBtn
-            // 
-            this.refreshBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.refreshBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.refreshBtn.BorderRadius = 5;
-            this.refreshBtn.ButtonText = "Refresh";
-            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.refreshBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.refreshBtn.Iconimage = null;
-            this.refreshBtn.Iconimage_right = null;
-            this.refreshBtn.Iconimage_right_Selected = null;
-            this.refreshBtn.Iconimage_Selected = null;
-            this.refreshBtn.IconMarginLeft = 0;
-            this.refreshBtn.IconMarginRight = 0;
-            this.refreshBtn.IconRightVisible = true;
-            this.refreshBtn.IconRightZoom = 0D;
-            this.refreshBtn.IconVisible = true;
-            this.refreshBtn.IconZoom = 70D;
-            this.refreshBtn.IsTab = false;
-            this.refreshBtn.Location = new System.Drawing.Point(17, 28);
-            this.refreshBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            this.refreshBtn.OnHovercolor = System.Drawing.Color.Orange;
-            this.refreshBtn.OnHoverTextColor = System.Drawing.Color.White;
-            this.refreshBtn.selected = false;
-            this.refreshBtn.Size = new System.Drawing.Size(112, 28);
-            this.refreshBtn.TabIndex = 56;
-            this.refreshBtn.Text = "Refresh";
-            this.refreshBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.refreshBtn.Textcolor = System.Drawing.Color.White;
-            this.refreshBtn.TextFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
             // registerDepartmentTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +292,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.searchPanel);
             this.Name = "registerDepartmentTab";
-            this.Size = new System.Drawing.Size(841, 476);
+            this.Size = new System.Drawing.Size(1021, 476);
             this.Load += new System.EventHandler(this.registerDepartmentTab_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -287,5 +319,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton refreshBtn;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuMetroTextbox deptCode;
     }
 }
