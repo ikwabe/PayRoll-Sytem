@@ -225,7 +225,7 @@ namespace PayRoll_Sytem
                             
 
                             //geting the deductions for the employee
-                            string getDeduction = "select * from employeededuction where empCode = '" + Emptable.Rows[i][4] + "' and dateForDeduction = '"+payRollDate.Text+ "' or deductiontype = 'CONSTANT'";
+                            string getDeduction = "select * from employeededuction where empCode = '" + Emptable.Rows[i][4].ToString() + "' and dateForDeduction = '"+payRollDate.Text+ "' and statuse <> 'YES'";
                             MySqlCommand deductionCom = new MySqlCommand(getDeduction, con);
 
                             System.Data.DataTable deductionTable = new System.Data.DataTable();
@@ -281,6 +281,7 @@ namespace PayRoll_Sytem
 
                             }
 
+                           
                            
                             //check if an employee has social security fund, house rent and HESLB deduction
 
@@ -364,6 +365,8 @@ namespace PayRoll_Sytem
 
                           
                             deductionTotal = dductionTotal + socialSecurityFund + deductionOnAccount + HESLBLoan + houseRent + NHIF + tithe + i_Tax;
+
+                            MessageBox.Show(Emptable.Rows[i][4].ToString() + " " + deductionTotal);
 
                             salaryNet = incomeTotal - deductionTotal;
 
