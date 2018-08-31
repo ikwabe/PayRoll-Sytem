@@ -151,6 +151,7 @@ namespace PayRoll_Sytem
 
                 if (table.Rows.Count > 0)
                 {
+                    Cursor = Cursors.WaitCursor;
                    
                     
                     for (int i = 0; i< table.Rows.Count;i++)
@@ -222,6 +223,7 @@ namespace PayRoll_Sytem
                     label2.Visible = false;
                     MessageBox.Show("Sorry, The Payroll for this Month is not present. Please check for another Month.");
                 }
+                Cursor = Cursors.Arrow;
             }
             catch (MySqlException ex)
             {
