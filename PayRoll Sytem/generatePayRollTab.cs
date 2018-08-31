@@ -350,8 +350,7 @@ namespace PayRoll_Sytem
                             incomeTaxable = salaryBasic + allowanceUtility - socialSecurityFund;
 
                             tithe = salaryBasic * 0.1;
-
-                           
+ 
                             if (incomeTaxable < 170000)
                                 i_Tax = 0;
                             if (incomeTaxable < 360000)
@@ -365,8 +364,6 @@ namespace PayRoll_Sytem
 
                           
                             deductionTotal = dductionTotal + socialSecurityFund + deductionOnAccount + HESLBLoan + houseRent + NHIF + tithe + i_Tax;
-
-                           
 
                             salaryNet = incomeTotal - deductionTotal;
 
