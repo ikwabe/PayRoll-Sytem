@@ -81,23 +81,23 @@ namespace PayRoll_Sytem
         }
 
         Label sendInfo;
-        private void sendEmail(string email)
+        private void sendEmail(string email,string message)
         {
             sendInfo = new Label();
             sendInfo.Font = new Font("Calibri", 11);
            
             sendInfo.AutoSize = true;
 
-            using (MailMessage mail = new MailMessage("ikwabe04@gmail.com", email, "TESTING THE SALARY SLIP EMAIL SENDER", "Habari Rafiki? Usishitushwe na ujumbe huu, tunajaribu system. Asante."))
+            using (MailMessage mail = new MailMessage("adventistsec@gmail.com", email, "TESTING THE SALARY SLIP EMAIL SENDER", message))
             using (SmtpClient client = new SmtpClient("smtp.gmail.com"))
             using (Attachment file = new Attachment("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf"))
             {
 
                 client.Port = 587;
-                client.Credentials = new System.Net.NetworkCredential("ikwabe04@gmail.com", "mikunjoyamwili");
+                client.Credentials = new System.Net.NetworkCredential("adventistsec@gmail.com", "secadventist01");
                 client.EnableSsl = true;
 
-                file.Name = "Salary Slip for " + DateTime.Now.ToString("MMMM yyyy") + ".pdf";
+                file.Name = "Salary Slip for " + receiptDate.Text + ".pdf";
                 mail.Attachments.Add(file);
                 try
                 {
@@ -121,14 +121,13 @@ namespace PayRoll_Sytem
 
         Label done;
         int yearOfService;
-        private void sendReceiptBtn_Click(object sender, EventArgs e)
-        {
-            
-            label2.Visible = true;
 
+
+        private void sendEmail()
+        {
             //A label for done 
             done = new Label();
-            done.Font = new Font("Calibri", 12,FontStyle.Bold);
+            done.Font = new Font("Calibri", 12, FontStyle.Bold);
             done.ForeColor = Color.LimeGreen;
             done.AutoSize = true;
 
@@ -152,9 +151,9 @@ namespace PayRoll_Sytem
                 if (table.Rows.Count > 0)
                 {
                     Cursor = Cursors.WaitCursor;
-                   
-                    
-                    for (int i = 0; i< table.Rows.Count;i++)
+
+
+                    for (int i = 0; i < table.Rows.Count; i++)
                     {
                         string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[i][3].ToString() + "' ";
 
@@ -165,15 +164,16 @@ namespace PayRoll_Sytem
                         da = new MySqlDataAdapter(com2);
                         da.Fill(tab);
                         da.Dispose();
-                        
-                        for(int j = 0; j< tab.Rows.Count; j++)
+
+                        for (int j = 0; j < tab.Rows.Count; j++)
                         {
-                            
-                            yearOfService = int.Parse(DateTime.Now.ToShortDateString().Substring(6)) - int.Parse(tab.Rows[j][0].ToString().Substring(6));
+
+                            if (tab.Rows[j][0].ToString().Substring(4, 1) == "/")
+                                yearOfService = DateTime.Now.Year - int.Parse(tab.Rows[j][0].ToString().Substring(0, 4));
+                            else
+                                yearOfService = DateTime.Now.Year - int.Parse(tab.Rows[j][0].ToString().Substring(6));
 
                         }
-
-
                         salarySlip.PreapareSalarySlip(table.Rows[i][2].ToString(),
                                             table.Rows[i][3].ToString(),
                                             table.Rows[i][5].ToString(),
@@ -181,7 +181,7 @@ namespace PayRoll_Sytem
                                             table.Rows[i][7].ToString(),
                                             string.Format("{0:n}", table.Rows[i][6]),
                                             yearOfService.ToString(),
-                                            DateTime.Now.ToShortDateString(),
+                                            receiptDate.Text,
                                             string.Format("{0:n}", table.Rows[i][10]),
                                             string.Format("{0:n}", table.Rows[i][11]),
                                             string.Format("{0:n}", table.Rows[i][12]),
@@ -211,7 +211,7 @@ namespace PayRoll_Sytem
                                             string.Format("{0:n}", table.Rows[i][35]),
                                             string.Format("{0:n}", table.Rows[i][36]));
 
-                        sendEmail(table.Rows[i][38].ToString());
+                        sendEmail(table.Rows[i][38].ToString(),message);
                     }
 
                     done.Text = "DONE!    (" + DateTime.Now.ToLongTimeString() + ")";
@@ -231,6 +231,19 @@ namespace PayRoll_Sytem
                 MessageBox.Show(ex.Message);
             }
             con.Close();
+
+        }
+
+        public static bool swich = false;
+        private void sendReceiptBtn_Click(object sender, EventArgs e)
+        {
+            
+            label2.Visible = true;
+            swich = true;
+            printreceiptTab.swich = false;
+            MessageTab msg = new MessageTab();
+            msg.ShowDialog();
+
         }
 
         private void ViewPayRoll_Click(object sender, EventArgs e)
@@ -239,5 +252,18 @@ namespace PayRoll_Sytem
         }
 
        
+        public static bool check = false;
+        public static string message = null;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (check == true)
+            {
+
+              check = false;
+               
+               sendEmail();
+            }
+
+        }
     }
 }

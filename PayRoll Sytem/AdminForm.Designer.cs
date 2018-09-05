@@ -43,6 +43,7 @@
             this.updateUserBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addUserBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.checkActivityBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.headerPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
@@ -141,6 +142,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.checkActivityBtn);
             this.panel3.Controls.Add(this.lineSp);
             this.panel3.Controls.Add(this.updateUserBtn);
             this.panel3.Controls.Add(this.addUserBtn);
@@ -240,6 +242,41 @@
             this.panel4.Size = new System.Drawing.Size(1370, 590);
             this.panel4.TabIndex = 3;
             // 
+            // checkActivityBtn
+            // 
+            this.checkActivityBtn.Activecolor = System.Drawing.Color.ForestGreen;
+            this.checkActivityBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.checkActivityBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.checkActivityBtn.BorderRadius = 5;
+            this.checkActivityBtn.ButtonText = "Check User Activitie(s)";
+            this.checkActivityBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkActivityBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.checkActivityBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.checkActivityBtn.Iconimage = null;
+            this.checkActivityBtn.Iconimage_right = null;
+            this.checkActivityBtn.Iconimage_right_Selected = null;
+            this.checkActivityBtn.Iconimage_Selected = null;
+            this.checkActivityBtn.IconMarginLeft = 0;
+            this.checkActivityBtn.IconMarginRight = 0;
+            this.checkActivityBtn.IconRightVisible = true;
+            this.checkActivityBtn.IconRightZoom = 0D;
+            this.checkActivityBtn.IconVisible = true;
+            this.checkActivityBtn.IconZoom = 70D;
+            this.checkActivityBtn.IsTab = false;
+            this.checkActivityBtn.Location = new System.Drawing.Point(1132, 6);
+            this.checkActivityBtn.Name = "checkActivityBtn";
+            this.checkActivityBtn.Normalcolor = System.Drawing.Color.SeaGreen;
+            this.checkActivityBtn.OnHovercolor = System.Drawing.Color.Green;
+            this.checkActivityBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.checkActivityBtn.selected = false;
+            this.checkActivityBtn.Size = new System.Drawing.Size(226, 49);
+            this.checkActivityBtn.TabIndex = 50;
+            this.checkActivityBtn.Text = "Check User Activitie(s)";
+            this.checkActivityBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkActivityBtn.Textcolor = System.Drawing.Color.White;
+            this.checkActivityBtn.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkActivityBtn.Click += new System.EventHandler(this.checkActivityBtn_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +318,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton updateUserBtn;
         private Bunifu.Framework.UI.BunifuFlatButton addUserBtn;
         private Bunifu.Framework.UI.BunifuSeparator lineSp;
+        private Bunifu.Framework.UI.BunifuFlatButton checkActivityBtn;
     }
 }

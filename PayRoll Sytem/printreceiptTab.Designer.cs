@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(printreceiptTab));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.receiptPdf = new AxAcroPDFLib.AxAcroPDF();
+            this.messagelabel = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.sendEmailBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.employeeNameLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -48,9 +49,9 @@
             this.searchPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.searchResultDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptPdf)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.searchPanel.SuspendLayout();
@@ -65,37 +66,74 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(316, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 528);
+            this.panel2.Size = new System.Drawing.Size(1066, 528);
             this.panel2.TabIndex = 36;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.receiptPdf);
+            this.panel6.Controls.Add(this.messagelabel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 62);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(577, 466);
+            this.panel6.Size = new System.Drawing.Size(1066, 466);
             this.panel6.TabIndex = 2;
             // 
-            // receiptPdf
+            // messagelabel
             // 
-            this.receiptPdf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.receiptPdf.Enabled = true;
-            this.receiptPdf.Location = new System.Drawing.Point(0, 0);
-            this.receiptPdf.Name = "receiptPdf";
-            this.receiptPdf.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("receiptPdf.OcxState")));
-            this.receiptPdf.Size = new System.Drawing.Size(577, 466);
-            this.receiptPdf.TabIndex = 0;
+            this.messagelabel.AutoEllipsis = true;
+            this.messagelabel.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messagelabel.ForeColor = System.Drawing.Color.LightGray;
+            this.messagelabel.Location = new System.Drawing.Point(114, 50);
+            this.messagelabel.Name = "messagelabel";
+            this.messagelabel.Size = new System.Drawing.Size(815, 382);
+            this.messagelabel.TabIndex = 51;
+            this.messagelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.sendEmailBtn);
             this.panel4.Controls.Add(this.employeeNameLabel);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(577, 62);
+            this.panel4.Size = new System.Drawing.Size(1066, 62);
             this.panel4.TabIndex = 0;
+            // 
+            // sendEmailBtn
+            // 
+            this.sendEmailBtn.Activecolor = System.Drawing.Color.ForestGreen;
+            this.sendEmailBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.sendEmailBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.sendEmailBtn.BorderRadius = 5;
+            this.sendEmailBtn.ButtonText = "Send Email";
+            this.sendEmailBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sendEmailBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.sendEmailBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.sendEmailBtn.Iconimage = null;
+            this.sendEmailBtn.Iconimage_right = null;
+            this.sendEmailBtn.Iconimage_right_Selected = null;
+            this.sendEmailBtn.Iconimage_Selected = null;
+            this.sendEmailBtn.IconMarginLeft = 0;
+            this.sendEmailBtn.IconMarginRight = 0;
+            this.sendEmailBtn.IconRightVisible = true;
+            this.sendEmailBtn.IconRightZoom = 0D;
+            this.sendEmailBtn.IconVisible = true;
+            this.sendEmailBtn.IconZoom = 70D;
+            this.sendEmailBtn.IsTab = false;
+            this.sendEmailBtn.Location = new System.Drawing.Point(843, 17);
+            this.sendEmailBtn.Name = "sendEmailBtn";
+            this.sendEmailBtn.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.sendEmailBtn.OnHovercolor = System.Drawing.Color.Green;
+            this.sendEmailBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.sendEmailBtn.selected = false;
+            this.sendEmailBtn.Size = new System.Drawing.Size(151, 38);
+            this.sendEmailBtn.TabIndex = 33;
+            this.sendEmailBtn.Text = "Send Email";
+            this.sendEmailBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sendEmailBtn.Textcolor = System.Drawing.Color.White;
+            this.sendEmailBtn.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendEmailBtn.Click += new System.EventHandler(this.sendEmailBtn_Click);
             // 
             // employeeNameLabel
             // 
@@ -291,6 +329,11 @@
             this.searchResultDataGrid.TabIndex = 12;
             this.searchResultDataGrid.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.searchResultDataGrid_CellMouseClick);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // printreceiptTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,11 +342,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.searchPanel);
             this.Name = "printreceiptTab";
-            this.Size = new System.Drawing.Size(893, 528);
+            this.Size = new System.Drawing.Size(1382, 528);
             this.Load += new System.EventHandler(this.printreceiptTab_Load);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.receiptPdf)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -329,9 +371,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton checkEmpReceiptBtn;
         private System.Windows.Forms.Label employeeNameLabel;
         private System.Windows.Forms.Label label1;
-        private AxAcroPDFLib.AxAcroPDF receiptPdf;
+      
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuCustomDataGrid searchResultDataGrid;
         private System.Windows.Forms.DateTimePicker payRollDate;
+        private Bunifu.Framework.UI.BunifuFlatButton sendEmailBtn;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label messagelabel;
     }
 }

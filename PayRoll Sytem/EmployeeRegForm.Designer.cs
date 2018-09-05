@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeRegForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.headerPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,6 +43,8 @@
             this.logoPhoto = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.employedDate = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.departmentCombo = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -85,8 +87,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.searchText = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.employedDate = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.deductTitheOnCombo = new System.Windows.Forms.ComboBox();
             this.headerPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
@@ -202,6 +204,8 @@
             // 
             this.panel5.AutoScroll = true;
             this.panel5.AutoSize = true;
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.deductTitheOnCombo);
             this.panel5.Controls.Add(this.employedDate);
             this.panel5.Controls.Add(this.label19);
             this.panel5.Controls.Add(this.label18);
@@ -244,6 +248,29 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1054, 662);
             this.panel5.TabIndex = 29;
+            // 
+            // employedDate
+            // 
+            this.employedDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.employedDate.Location = new System.Drawing.Point(773, 433);
+            this.employedDate.MaxDate = new System.DateTime(2500, 1, 1, 0, 0, 0, 0);
+            this.employedDate.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
+            this.employedDate.Name = "employedDate";
+            this.employedDate.Size = new System.Drawing.Size(200, 27);
+            this.employedDate.TabIndex = 48;
+            this.employedDate.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.LightGray;
+            this.label19.Location = new System.Drawing.Point(771, 395);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(113, 19);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "Employed Date";
             // 
             // label18
             // 
@@ -871,23 +898,23 @@
             this.searchResultDataGrid.AllowUserToAddRows = false;
             this.searchResultDataGrid.AllowUserToDeleteRows = false;
             this.searchResultDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.LightGray;
-            this.searchResultDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.LightGray;
+            this.searchResultDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.searchResultDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.searchResultDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.searchResultDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
             this.searchResultDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchResultDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.searchResultDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.searchResultDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.searchResultDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.searchResultDataGrid.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchResultDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -902,9 +929,9 @@
             this.searchResultDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.searchResultDataGrid.RowHeadersVisible = false;
             this.searchResultDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.searchResultDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.searchResultDataGrid.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.searchResultDataGrid.ShowEditingIcon = false;
             this.searchResultDataGrid.Size = new System.Drawing.Size(316, 541);
             this.searchResultDataGrid.TabIndex = 11;
@@ -961,28 +988,32 @@
             this.searchText.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchText.OnValueChanged += new System.EventHandler(this.searchText_OnValueChanged);
             // 
-            // employedDate
+            // label20
             // 
-            this.employedDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.employedDate.Location = new System.Drawing.Point(773, 433);
-            this.employedDate.MaxDate = new System.DateTime(2500, 1, 1, 0, 0, 0, 0);
-            this.employedDate.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.employedDate.Name = "employedDate";
-            this.employedDate.Size = new System.Drawing.Size(200, 27);
-            this.employedDate.TabIndex = 48;
-            this.employedDate.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.LightGray;
+            this.label20.Location = new System.Drawing.Point(30, 487);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(121, 19);
+            this.label20.TabIndex = 50;
+            this.label20.Text = "Deduct Tithe On";
             // 
-            // label19
+            // deductTitheOnCombo
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.LightGray;
-            this.label19.Location = new System.Drawing.Point(771, 395);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(113, 19);
-            this.label19.TabIndex = 47;
-            this.label19.Text = "Employed Date";
+            this.deductTitheOnCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
+            this.deductTitheOnCombo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deductTitheOnCombo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductTitheOnCombo.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.deductTitheOnCombo.FormattingEnabled = true;
+            this.deductTitheOnCombo.Items.AddRange(new object[] {
+            "",
+            "TOTAL INCOME",
+            "SALARY BASIC"});
+            this.deductTitheOnCombo.Location = new System.Drawing.Point(34, 510);
+            this.deductTitheOnCombo.Name = "deductTitheOnCombo";
+            this.deductTitheOnCombo.Size = new System.Drawing.Size(198, 31);
+            this.deductTitheOnCombo.TabIndex = 49;
             // 
             // EmployeeRegForm
             // 
@@ -1071,6 +1102,8 @@
         private System.Windows.Forms.ComboBox departmentCombo;
         private System.Windows.Forms.DateTimePicker employedDate;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox deductTitheOnCombo;
     }
 }
 

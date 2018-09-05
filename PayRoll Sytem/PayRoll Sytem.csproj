@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bill.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
@@ -159,6 +163,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageTab.Designer.cs">
+      <DependentUpon>MessageTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayRollForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +213,12 @@
     </Compile>
     <Compile Include="VerifyLogin.Designer.cs">
       <DependentUpon>VerifyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewActivites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewActivites.Designer.cs">
+      <DependentUpon>ViewActivites.cs</DependentUpon>
     </Compile>
     <Compile Include="viewPayRollTab.cs">
       <SubType>UserControl</SubType>
@@ -261,6 +277,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageTab.resx">
+      <DependentUpon>MessageTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PayRollForm.resx">
       <DependentUpon>PayRollForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +311,9 @@
     <EmbeddedResource Include="VerifyLogin.resx">
       <DependentUpon>VerifyLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewActivites.resx">
+      <DependentUpon>ViewActivites.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewPayRollTab.resx">
       <DependentUpon>viewPayRollTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,23 +335,6 @@
     <None Include="Resources\1497134779090-320x320.png" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="AxAcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
     <COMReference Include="Microsoft.Office.Core">
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
@@ -363,6 +368,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_Church_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bill.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

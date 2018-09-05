@@ -234,7 +234,7 @@ namespace PayRoll_Sytem
         private void EmployeeAllawanceAndDeductionForm_Load(object sender, EventArgs e)
         {
             deductionDate.CustomFormat = "MMMM yyyy";
-            deductionDate.MinDate = DateTime.Now;
+           // deductionDate.MinDate = DateTime.Now;
             successTimer = new Timer();
             successTimer.Tick += new EventHandler(successTimer_Tick);
             successTimer.Interval = 100;

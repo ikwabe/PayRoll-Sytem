@@ -33,7 +33,9 @@ namespace PayRoll_Sytem
         private void generatePayRollTab_Load(object sender, EventArgs e)
         {
             payRollDate.CustomFormat = "MMMM yyyy";
-            payRollDate.MinDate = DateTime.Now;
+            //payRollDate.MinDate = DateTime.Now;
+
+           
         }
 
         //calculated variable for payroll
@@ -348,8 +350,10 @@ namespace PayRoll_Sytem
                             }
 
                             incomeTaxable = salaryBasic + allowanceUtility - socialSecurityFund;
-
-                            tithe = salaryBasic * 0.1;
+                            if (Emptable.Rows[i][17].ToString() == "TOTAL INCOME")
+                                tithe = incomeTotal * 0.1;
+                            else
+                                tithe = salaryBasic * 0.1;
  
                             if (incomeTaxable < 170000)
                                 i_Tax = 0;

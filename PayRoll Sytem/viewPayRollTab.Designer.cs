@@ -137,9 +137,9 @@
             this.label6.ForeColor = System.Drawing.Color.LightGray;
             this.label6.Location = new System.Drawing.Point(109, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(353, 19);
+            this.label6.Size = new System.Drawing.Size(326, 19);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Please Select The Date here For Viewing the Pay-Roll";
+            this.label6.Text = "Please Select The Date here to View the Pay-Roll";
             // 
             // panel3
             // 

@@ -79,5 +79,11 @@ namespace PayRoll_Sytem
             updateUserTab.Instance.Visible = false;
             addNewUserTab.Instance.Visible = true;
         }
+
+        private void checkActivityBtn_Click(object sender, EventArgs e)
+        {
+            ViewActivites va = new ViewActivites();
+            va.ShowDialog();
+        }
     }
 }

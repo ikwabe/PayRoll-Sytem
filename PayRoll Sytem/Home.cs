@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Reflection;
 
 namespace PayRoll_Sytem
 {
@@ -23,8 +24,8 @@ namespace PayRoll_Sytem
 
         //mysql connection string
         public static string computerName = Environment.UserName;
-        public static string DBconnection = "server = localhost; user = root; password = '' ; database = payrolldatabase ";
-
+        public static string DBconnection = "server = 192.168.1.112; user = payroll; password = 'secadventist' ; database = payrolldatabase ";
+       
         static void createDirectory()
         {
             string rootDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\SEC Payroll";
@@ -33,10 +34,16 @@ namespace PayRoll_Sytem
             {
                 if (!Directory.Exists(rootDirectory)) { Directory.CreateDirectory(rootDirectory); }
                 if (!Directory.Exists(rootDirectory + "\\Receipts")) { Directory.CreateDirectory(rootDirectory + "\\Receipts"); }
+                if (!Directory.Exists(rootDirectory + "\\Logo")) { Directory.CreateDirectory(rootDirectory + "\\Logo"); }
 
                 //directory for payrolls
                 if (!Directory.Exists(payrollDirectory)) { Directory.CreateDirectory(payrollDirectory); }
 
+                if(!File.Exists("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Logo/Church_logo.png"))
+                {
+                    Bitmap img = new Bitmap(Properties.Resources._Church_logo);
+                    img.Save("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Logo/Church_logo.png");
+                }
             }
             catch
             {

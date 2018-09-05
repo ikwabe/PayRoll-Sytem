@@ -9,16 +9,31 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PayRoll", "PayRoll\PayRoll.
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{38B2B6D1-DCD9-4947-8698-31DA958A52DF}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.CD_ROM|Any CPU.ActiveCfg = Release
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.CD_ROM|Any CPU.Build.0 = Release
 		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.Debug|Any CPU.ActiveCfg = Debug
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.DVD-5|Any CPU.ActiveCfg = Debug
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.DVD-5|Any CPU.Build.0 = Debug
 		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.Release|Any CPU.ActiveCfg = Release
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.SingleImage|Any CPU.ActiveCfg = Release
+		{ECA1128D-24B3-4EEA-9B6D-73E14EE427A0}.SingleImage|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

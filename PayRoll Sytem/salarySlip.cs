@@ -31,7 +31,7 @@ namespace PayRoll_Sytem
             string taxRef, string IncAft)
         {
             
-            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(@"C:\Users\Shadrack Ikwabe\Pictures\LOGO\Church_logo.png");
+            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Logo/Church_logo.png");
             img.ScaleAbsolute(10f, 60f);
 
 
@@ -170,7 +170,7 @@ namespace PayRoll_Sytem
             Chunk Scale = new Chunk("Sacle%: " + scale.ToUpper(), FontFactory.GetFont("Arial", 10, BaseColor.BLACK));
             Chunk ScaleBase = new Chunk("ScaleBase: " + scaleBase.ToUpper(), FontFactory.GetFont("Arial", 10, BaseColor.BLACK));
             Chunk yearOfService = new Chunk("Year Of Service: " + yearOffService.ToUpper(), FontFactory.GetFont("Arial", 10, BaseColor.BLACK));
-            Chunk Date = new Chunk("Date: " + DateTime.Now.ToShortDateString(), FontFactory.GetFont("Arial", 10, BaseColor.BLACK));
+            Chunk Date = new Chunk("Date: " + date, FontFactory.GetFont("Arial", 10, BaseColor.BLACK));
 
             //Income Paticulars
             Chunk income = new Chunk("INCOME: ", FontFactory.GetFont("Arial", 12, BaseColor.BLACK));
@@ -346,12 +346,10 @@ namespace PayRoll_Sytem
             totaDeduc.AddCell(new Phrase(IncAft));
 
 
-
-
             using (FileStream file = new FileStream("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Receipts/receipt.pdf", FileMode.Create))
             {
                 Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 10f);
-                PdfWriter.GetInstance(pdfDoc, file);
+                 PdfWriter.GetInstance(pdfDoc, file);
 
                 pdfDoc.Open();
                 pdfDoc.Add(table);

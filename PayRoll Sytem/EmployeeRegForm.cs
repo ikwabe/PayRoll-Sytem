@@ -135,6 +135,8 @@ namespace PayRoll_Sytem
             bankAcountNumberTxt.Text = "";
             employeeStatus.SelectedIndex = 0;
             salaryCategory.selectedIndex = 0;
+            deductTitheOnCombo.SelectedIndex = 0;
+            departmentCombo.SelectedIndex = -1;
            
         }
         //a function to generate employee code and Salary basic
@@ -230,7 +232,9 @@ namespace PayRoll_Sytem
                 || bankNameTxt.Text == ""
                 || bankAcountNumberTxt.Text == ""
                 || employeeStatus.SelectedIndex == 0
-                || deptCode == null)
+                || deptCode == null
+                || departmentCombo.SelectedIndex == -1
+                || deductTitheOnCombo.SelectedIndex == 0)
             {
                 MessageBox.Show("Please, fill all the fields..!");
             }
@@ -256,9 +260,10 @@ namespace PayRoll_Sytem
                             "','" + bankAcountNumberTxt.Text.ToUpper() +
                             "','"+bankNameTxt.Text.ToUpper()+
                             "','"+employedDate.Text+
-                            "','"+employeeStatus.Text.ToUpper()+"')";
+                            "','"+employeeStatus.Text.ToUpper()+
+                            "','"+deductTitheOnCombo.Text+"')";
 
-                        string registerEmployee = "insert into employee(fname,mname,lname,empCode,DeptCode,DOB,salaryCategory,scaleBase,scalePercent,employeeEmail,phoneNumber,position,bankAccount,bankName,dateRegistered,statuse) " + value;
+                        string registerEmployee = "insert into employee(fname,mname,lname,empCode,DeptCode,DOB,salaryCategory,scaleBase,scalePercent,employeeEmail,phoneNumber,position,bankAccount,bankName,dateRegistered,statuse,deductTitheOn) " + value;
 
                         MySqlCommand com = new MySqlCommand(registerEmployee, con);
                         MySqlDataReader rd;
@@ -362,7 +367,7 @@ namespace PayRoll_Sytem
         }
 
         string empID = null;
-        string dateRegistered = null;
+       
         private static string empname = null;
         private static string empCode = null;
         private void searchResultDataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -408,7 +413,7 @@ namespace PayRoll_Sytem
                             bankNameTxt.Text = table.Rows[0][14].ToString();
                             employedDate.Text = table.Rows[0][15].ToString();
                             empCode = empCodeTxt.Text;
-
+                            deductTitheOnCombo.Text = table.Rows[0][17].ToString();
 
                             if (table.Rows[0][7].ToString() == "A")
                                 salaryCategory.selectedIndex = 1;
@@ -454,7 +459,9 @@ namespace PayRoll_Sytem
                 || bankNameTxt.Text == ""
                 || bankAcountNumberTxt.Text == ""
                 || employeeStatus.SelectedIndex == 0
-                || empCode == null)
+                || empCode == null
+                || deductTitheOnCombo.SelectedIndex == 0
+                || departmentCombo.SelectedIndex == -1)
             {
                 MessageBox.Show("Please, fill all the fields..!");
             }
@@ -493,7 +500,8 @@ namespace PayRoll_Sytem
                             "', bankAccount = '" + bankAcountNumberTxt.Text.ToUpper() +
                             "', bankname = '" + bankNameTxt.Text.ToUpper() +
                             "', dateRegistered = '" + employedDate.Text +
-                            "', employee.statuse = '" + employeeStatus.Text.ToUpper() + "' where employee.empID = '" + empID + "';" +
+                            "', employee.statuse = '" + employeeStatus.Text.ToUpper() + 
+                            "', deductTitheOn = '"+deductTitheOnCombo.Text+"' where employee.empID = '" + empID + "';" +
                             " SET foreign_key_checks = 1;";
 
                         MySqlCommand com = new MySqlCommand(updateEmployee, con);

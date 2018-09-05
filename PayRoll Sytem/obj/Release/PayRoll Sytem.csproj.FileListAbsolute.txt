@@ -1,0 +1,45 @@
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\PayRoll Sytem.exe.config
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\Interop.AcroPDFLib.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll Sytem.csproj.ResolveComReference.cache
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\PayRoll Sytem.exe
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\PayRoll Sytem.pdb
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\Bunifu_UI_v1.5.3.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\itextsharp.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\MySql.Data.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\itextsharp.xml
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\MySql.Data.xml
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\Interop.AcroPDFLib.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Release\AxInterop.AcroPDFLib.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll Sytem.csprojResolveAssemblyReference.cache
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.addAllowanceTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.addDeductionTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.addNewUserTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.AdminForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.AllowanceAndDeductionForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.AllowanceTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.deductionTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.departmentForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.editAllowanceTb.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.editDeductionTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.editDepartmentTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.EditEmpDeductionAndAllowance.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.EmployeeAllawanceAndDeductionForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.EmployeeRegForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.generatePayRollTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.Home.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.Login.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.PayRollForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.printreceiptTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.Properties.Resources.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.ReceiptForm.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.registerDepartmentTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.sendReceiptTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.updateUserTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.VerifyLogin.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.ViewActivites.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.viewPayRollTab.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll Sytem.csproj.GenerateResource.Cache
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll Sytem.exe
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll Sytem.pdb
+C:\Users\Shadrack Ikwabe\Documents\Visual Studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Release\PayRoll_Sytem.MessageTab.resources
