@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_03B37D41CB5E42689F759ACC189195EC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_15F93773B0F24542CD6B3C02A2FA8F63"
         "OwnerKey" = "8:_776EE2BA158D41CD93C148F1E152F32B"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,12 +47,6 @@
         {
         "MsmKey" = "8:_EA4BF51FE2298B746A7B86CF37B84F5B"
         "OwnerKey" = "8:_776EE2BA158D41CD93C148F1E152F32B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_EF1EA95AD60B4DBFB168B442A85B4AF3"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,6 +136,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -166,6 +174,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_03B37D41CB5E42689F759ACC189195EC"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\Pictures\\LOGO\\Icons\\calculator2.ico"
+            "TargetName" = "8:calculator2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_015359C1F6834E07A84B46509B430536"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_15F93773B0F24542CD6B3C02A2FA8F63"
             {
             "AssemblyRegister" = "3:1"
@@ -290,26 +318,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EF1EA95AD60B4DBFB168B442A85B4AF3"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Pictures\\LOGO\\calculator2.ico"
-            "TargetName" = "8:calculator2.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_015359C1F6834E07A84B46509B430536"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
@@ -378,7 +386,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PayRoll"
         "ProductCode" = "8:{F2AEA6CC-7441-497C-861E-6AB42E5F5809}"
-        "PackageCode" = "8:{DE881974-ABC6-46D9-81FF-CD18E64124E5}"
+        "PackageCode" = "8:{9EE8EE52-1787-4C76-A9DF-76FD0321939B}"
         "UpgradeCode" = "8:{EB1F6B77-0B5C-4B55-860C-84E5D07CB40B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -509,7 +517,7 @@
             "Target" = "8:_776EE2BA158D41CD93C148F1E152F32B"
             "Folder" = "8:_E36BCC41633940B7877D70FB9B34EAF3"
             "WorkingFolder" = "8:_015359C1F6834E07A84B46509B430536"
-            "Icon" = "8:_EF1EA95AD60B4DBFB168B442A85B4AF3"
+            "Icon" = "8:_03B37D41CB5E42689F759ACC189195EC"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DD9EFA6547564B5EB5B363A9E9E5A9AD"
@@ -523,7 +531,7 @@
             "Target" = "8:_776EE2BA158D41CD93C148F1E152F32B"
             "Folder" = "8:_C8DE6ECFCFCD4CB995687D4596E7F37B"
             "WorkingFolder" = "8:_015359C1F6834E07A84B46509B430536"
-            "Icon" = "8:_EF1EA95AD60B4DBFB168B442A85B4AF3"
+            "Icon" = "8:_03B37D41CB5E42689F759ACC189195EC"
             "Feature" = "8:"
             }
         }

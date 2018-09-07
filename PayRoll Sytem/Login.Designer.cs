@@ -101,7 +101,6 @@
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(312, 32);
             this.password.TabIndex = 1;
-            this.password.Text = "zege";
             this.password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // username
@@ -119,7 +118,6 @@
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(312, 32);
             this.username.TabIndex = 0;
-            this.username.Text = "zege";
             this.username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // closeBtn
