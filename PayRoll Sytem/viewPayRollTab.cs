@@ -83,7 +83,7 @@ namespace PayRoll_Sytem
                 }
                 else
                 {
-
+                    payRollDataGrid.DataSource = null;
                     MessageBox.Show("The Payroll is not Found.");
 
                 }
@@ -221,6 +221,64 @@ namespace PayRoll_Sytem
         private void saveAsPayRollBtn_Click(object sender, EventArgs e)
         {
             SavePayRoll();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            string checkPay = "select * from payroll where dateGenerated = '" + payRollDate.Text + "'";
+
+            MySqlCommand payroll = new MySqlCommand(checkPay, con);
+
+            MySqlDataAdapter da;
+
+            System.Data.DataTable payRollTable = new System.Data.DataTable();
+
+            try
+            {
+                con.Open();
+
+                da = new MySqlDataAdapter(payroll);
+                da.Fill(payRollTable);
+                da.Dispose();
+
+                if(payRollTable.Rows.Count > 0)
+                {
+                    if(MessageBox.Show("Are you sure you want to delete this payroll?","Alert",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        for (int i = 0; i < payRollTable.Rows.Count; i++)
+                        {
+                            string delete = "update payroll set dateGenerated = 'DELETED' where payRollID = '" + payRollTable.Rows[i][0].ToString() + "' ";
+                            MySqlCommand deletepay = new MySqlCommand(delete, con);
+
+                            MySqlDataReader rd;
+
+                            rd = deletepay.ExecuteReader();
+                            rd.Close();
+                        }
+
+                        Login.RecordUserActivity("Deleted the payroll for date " + payRollDate.Text + "");
+                        MessageBox.Show("Payroll deletes successful.");
+
+                    }
+                    else
+                    {
+
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("The payroll does not exist, please select the correct date.");
+                }
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }

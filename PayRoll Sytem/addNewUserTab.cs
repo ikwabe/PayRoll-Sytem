@@ -37,7 +37,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadEmpNames = " select CONCAT(fname,' ', mname,' ', lname) 'Employee Name' from employee";
+            string loadEmpNames = " select CONCAT(fname,' ', mname,' ', lname) 'Employee Name' from employee where state = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(loadEmpNames, con);
             MySqlDataAdapter da;
             DataTable table = new DataTable();
@@ -68,7 +68,7 @@ namespace PayRoll_Sytem
         {
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
-            string search = " select CONCAT(fname,' ', mname,' ', lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%'";
+            string search = " select CONCAT(fname,' ', mname,' ', lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' and state = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(search, con);
 
          
@@ -176,7 +176,7 @@ namespace PayRoll_Sytem
                     MySqlConnection con = new MySqlConnection();
                     con.ConnectionString = Home.DBconnection;
 
-                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ', mname,' ', lname) = '" + EmployeeFullName + "'";
+                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ', mname,' ', lname) = '" + EmployeeFullName + "' AND STATE = 'ACTIVE'";
                     MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
                     MySqlDataAdapter da;
                     DataTable table = new DataTable();

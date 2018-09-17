@@ -41,3 +41,7 @@ C:\Users\Shadrack Ikwabe\Documents\Visual Studio 2015\Projects\PayRoll Sytem\Pay
 C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Debug\PayRoll_Sytem.MessageTab.resources
 C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Debug\PayRoll Sytem.exe.CodeAnalysisLog.xml
 C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Debug\PayRoll Sytem.exe.lastcodeanalysissucceeded
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Debug\PayRoll_Sytem.ChangePassword.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Debug\PayRoll_Sytem.removedEmployee.resources
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\bin\Debug\mysqlbackup.dll
+C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem\obj\Debug\PayRoll Sytem.csproj.PayRoll Sytem.exe.config

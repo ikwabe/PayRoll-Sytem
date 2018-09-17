@@ -85,5 +85,11 @@ namespace PayRoll_Sytem
             ViewActivites va = new ViewActivites();
             va.ShowDialog();
         }
+
+        private void removedEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            removedEmployee rmv = new removedEmployee();
+            rmv.ShowDialog();
+        }
     }
 }

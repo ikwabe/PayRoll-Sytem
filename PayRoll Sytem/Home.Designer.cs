@@ -51,6 +51,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.receiptsBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ChangePasswordBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPhoto)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.departimentBn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pay_RollBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiptsBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangePasswordBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -318,12 +321,39 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Receipts";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.label10.Location = new System.Drawing.Point(100, 330);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(147, 23);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Change Password";
+            // 
+            // ChangePasswordBtn
+            // 
+            this.ChangePasswordBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ChangePasswordBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChangePasswordBtn.Image = ((System.Drawing.Image)(resources.GetObject("ChangePasswordBtn.Image")));
+            this.ChangePasswordBtn.ImageActive = null;
+            this.ChangePasswordBtn.Location = new System.Drawing.Point(118, 201);
+            this.ChangePasswordBtn.Name = "ChangePasswordBtn";
+            this.ChangePasswordBtn.Size = new System.Drawing.Size(109, 126);
+            this.ChangePasswordBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ChangePasswordBtn.TabIndex = 25;
+            this.ChangePasswordBtn.TabStop = false;
+            this.ChangePasswordBtn.Zoom = 10;
+            this.ChangePasswordBtn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ChangePasswordBtn_MouseClick);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
             this.ClientSize = new System.Drawing.Size(852, 621);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.receiptsBtn);
             this.Controls.Add(this.label8);
@@ -338,12 +368,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.employeeButn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.adiminBtn);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ChangePasswordBtn);
+            this.Controls.Add(this.adiminBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPhoto)).EndInit();
@@ -356,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.departimentBn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pay_RollBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiptsBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangePasswordBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +417,7 @@
         private Bunifu.Framework.UI.BunifuImageButton pay_RollBtn;
         private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuImageButton receiptsBtn;
+        private System.Windows.Forms.Label label10;
+        private Bunifu.Framework.UI.BunifuImageButton ChangePasswordBtn;
     }
 }

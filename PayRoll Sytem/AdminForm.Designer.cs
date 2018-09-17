@@ -42,8 +42,11 @@
             this.lineSp = new Bunifu.Framework.UI.BunifuSeparator();
             this.updateUserBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.addUserBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.checkActivityBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.removedEmployeeBtn = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.headerPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
@@ -51,6 +54,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPhoto)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -142,7 +146,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.checkActivityBtn);
             this.panel3.Controls.Add(this.lineSp);
             this.panel3.Controls.Add(this.updateUserBtn);
             this.panel3.Controls.Add(this.addUserBtn);
@@ -234,14 +237,6 @@
             this.addUserBtn.TextFont = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUserBtn.Click += new System.EventHandler(this.addUserBtn_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 182);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1370, 590);
-            this.panel4.TabIndex = 3;
-            // 
             // checkActivityBtn
             // 
             this.checkActivityBtn.Activecolor = System.Drawing.Color.ForestGreen;
@@ -263,7 +258,7 @@
             this.checkActivityBtn.IconVisible = true;
             this.checkActivityBtn.IconZoom = 70D;
             this.checkActivityBtn.IsTab = false;
-            this.checkActivityBtn.Location = new System.Drawing.Point(1132, 6);
+            this.checkActivityBtn.Location = new System.Drawing.Point(32, 60);
             this.checkActivityBtn.Name = "checkActivityBtn";
             this.checkActivityBtn.Normalcolor = System.Drawing.Color.SeaGreen;
             this.checkActivityBtn.OnHovercolor = System.Drawing.Color.Green;
@@ -277,6 +272,71 @@
             this.checkActivityBtn.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkActivityBtn.Click += new System.EventHandler(this.checkActivityBtn_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.removedEmployeeBtn);
+            this.panel5.Controls.Add(this.checkActivityBtn);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(1082, 182);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(288, 590);
+            this.panel5.TabIndex = 51;
+            // 
+            // removedEmployeeBtn
+            // 
+            this.removedEmployeeBtn.Activecolor = System.Drawing.Color.ForestGreen;
+            this.removedEmployeeBtn.BackColor = System.Drawing.Color.SeaGreen;
+            this.removedEmployeeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.removedEmployeeBtn.BorderRadius = 5;
+            this.removedEmployeeBtn.ButtonText = "Removed Employee(s)";
+            this.removedEmployeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removedEmployeeBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.removedEmployeeBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.removedEmployeeBtn.Iconimage = null;
+            this.removedEmployeeBtn.Iconimage_right = null;
+            this.removedEmployeeBtn.Iconimage_right_Selected = null;
+            this.removedEmployeeBtn.Iconimage_Selected = null;
+            this.removedEmployeeBtn.IconMarginLeft = 0;
+            this.removedEmployeeBtn.IconMarginRight = 0;
+            this.removedEmployeeBtn.IconRightVisible = true;
+            this.removedEmployeeBtn.IconRightZoom = 0D;
+            this.removedEmployeeBtn.IconVisible = true;
+            this.removedEmployeeBtn.IconZoom = 70D;
+            this.removedEmployeeBtn.IsTab = false;
+            this.removedEmployeeBtn.Location = new System.Drawing.Point(32, 132);
+            this.removedEmployeeBtn.Name = "removedEmployeeBtn";
+            this.removedEmployeeBtn.Normalcolor = System.Drawing.Color.SeaGreen;
+            this.removedEmployeeBtn.OnHovercolor = System.Drawing.Color.Green;
+            this.removedEmployeeBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.removedEmployeeBtn.selected = false;
+            this.removedEmployeeBtn.Size = new System.Drawing.Size(226, 49);
+            this.removedEmployeeBtn.TabIndex = 51;
+            this.removedEmployeeBtn.Text = "Removed Employee(s)";
+            this.removedEmployeeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.removedEmployeeBtn.Textcolor = System.Drawing.Color.White;
+            this.removedEmployeeBtn.TextFont = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removedEmployeeBtn.Click += new System.EventHandler(this.removedEmployeeBtn_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 182);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1082, 590);
+            this.panel4.TabIndex = 52;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(51, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 26);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "OTHER OPERATIONS";
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +344,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
             this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.headerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -299,6 +360,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPhoto)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -313,11 +376,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logoPhoto;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.Framework.UI.BunifuFlatButton updateUserBtn;
         private Bunifu.Framework.UI.BunifuFlatButton addUserBtn;
         private Bunifu.Framework.UI.BunifuSeparator lineSp;
         private Bunifu.Framework.UI.BunifuFlatButton checkActivityBtn;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private Bunifu.Framework.UI.BunifuFlatButton removedEmployeeBtn;
+        private System.Windows.Forms.Label label2;
     }
 }

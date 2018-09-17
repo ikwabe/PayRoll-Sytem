@@ -30,7 +30,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadEmpNames = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee";
+            string loadEmpNames = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(loadEmpNames, con);
             MySqlDataAdapter da;
             DataTable table = new DataTable();
@@ -332,7 +332,7 @@ namespace PayRoll_Sytem
         {
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
-            string search = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%'";
+            string search = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' AND STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(search, con);
 
 
@@ -386,7 +386,7 @@ namespace PayRoll_Sytem
                     MySqlConnection con = new MySqlConnection();
                     con.ConnectionString = Home.DBconnection;
 
-                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "'";
+                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "' AND STATE = 'ACTIVE'";
                     MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
                     MySqlDataAdapter da;
                     DataTable table = new DataTable();
@@ -542,21 +542,24 @@ namespace PayRoll_Sytem
         private void deleteEmpBtn_Click(object sender, EventArgs e)
         {
             bool check = false;
-            if (empID != null && MessageBox.Show("Are you sure you want to delete this Employee?","Alert",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (empID != null && MessageBox.Show("Are you sure you want to remove this Employee?","Alert",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 MySqlConnection con = new MySqlConnection();
                 con.ConnectionString = Home.DBconnection;
 
               
-                string delete = "SET foreign_key_checks = 0;"+
-                    " DELETE a.*, e.*, d.* "+
-                    " FROM employee e "+
-                    " JOIN employeeallowance a ON a.empCode = e.empCode "+
-                    " JOIN employeededuction d ON d.empCode = a.empCode "+
-                    " WHERE d.empCode = '"+empCodeTxt.Text+"';"+
-                    " SET foreign_key_checks = 1;";
+                //string delete = "SET foreign_key_checks = 0;"+
+                //    " DELETE a.*, e.*, d.* "+
+                //    " FROM employee e "+
+                //    " JOIN employeeallowance a ON a.empCode = e.empCode "+
+                //    " JOIN employeededuction d ON d.empCode = a.empCode "+
+                //    " WHERE d.empCode = '"+empCodeTxt.Text+"';"+
+                //    " SET foreign_key_checks = 1;";
 
-
+                string delete = "SET foreign_key_checks = 0;" +
+                   " UPDATE employee set state = 'DEACTIVE'"+
+                   " WHERE empCode = '" + empCodeTxt.Text + "';" +
+                   " SET foreign_key_checks = 1;";
                 MySqlCommand com = new MySqlCommand(delete, con);
                 MySqlDataReader rd;
                 try
@@ -567,12 +570,12 @@ namespace PayRoll_Sytem
                     rd = com.ExecuteReader();
                     rd.Close();
 
-                    Login.RecordUserActivity("Deleted " + empname + " who had " + empCode + " as employee ID ");
+                    Login.RecordUserActivity("Deactivated " + empname + " who had " + empCode + " as employee ID ");
 
                     clearFields();
                     LoadEmployee();
                     empID = null;
-                    MessageBox.Show("Employee Deleted Successful");
+                    MessageBox.Show("Employee Removed Successful");
 
                 }
                 catch (MySqlException ex)

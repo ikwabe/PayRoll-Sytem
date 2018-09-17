@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#addAllowanceBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="addAllowanceTab.cs" Line="79">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'addAllowanceTab.addAllowanceBtn_Click(object, EventArgs)' could contain the following variables 'this.newAllowanceTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -23,7 +23,7 @@
          <Members>
           <Member Name="#addDeductionBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="addDeductionTab.cs" Line="77">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'addDeductionTab.addDeductionBtn_Click(object, EventArgs)' could contain the following variables 'this.newDeductionTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -34,22 +34,34 @@
          <Members>
           <Member Name="#addUserBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="addNewUserTab.cs" Line="139">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'addNewUserTab.addUserBtn_Click(object, EventArgs)' could contain the following variables 'this.firstNameTxt.Text', 'this.middleNameTxt.Text', 'this.lastNameTxt.Text', 'this.userNameTxt.Text', 'Login.GetMD5Hash(this.passwordTxt.Text)', 'DateTime.Now', 'this.userCategory.selectedValue'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="addNewUserTab.cs" Line="180">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'addNewUserTab.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="addNewUserTab.cs" Line="72">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'addNewUserTab.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ChangePassword" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#changePassBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="ChangePassword.cs" Line="39">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'ChangePassword.changePassBtn_Click(object, EventArgs)' could contain the following variables 'Login.GetMD5Hash(this.Oldpassword.Text)'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="ChangePassword.cs" Line="57">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'ChangePassword.changePassBtn_Click(object, EventArgs)' could contain the following variables 'new string[5][1]', 'Login.UID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -59,28 +71,28 @@
          <Members>
           <Member Name="#deleteAllowanceBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editAllowanceTb.cs" Line="181">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editAllowanceTb.deleteAllowanceBtn_Click(object, EventArgs)' could contain the following variables 'editAllowanceTb.allowanceNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editAllowanceTb.cs" Line="105">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editAllowanceTb.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editAllowanceTb.cs" Line="215">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editAllowanceTb.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#updateAllowanceBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editAllowanceTb.cs" Line="143">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editAllowanceTb.updateAllowanceBtn_Click(object, EventArgs)' could contain the following variables 'this.editedAllowanceTxt.Text', 'editAllowanceTb.allowanceNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -91,28 +103,28 @@
          <Members>
           <Member Name="#deletDeductionBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDeductionTab.cs" Line="146">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDeductionTab.deletDeductionBtn_Click(object, EventArgs)' could contain the following variables 'editDeductionTab.deductionNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDeductionTab.cs" Line="106">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDeductionTab.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDeductionTab.cs" Line="218">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDeductionTab.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#updateDeductionBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDeductionTab.cs" Line="183">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDeductionTab.updateDeductionBtn_Click(object, EventArgs)' could contain the following variables 'this.editedDeductionTxt.Text', 'editDeductionTab.deductionNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -123,28 +135,28 @@
          <Members>
           <Member Name="#deleteDepartmentBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDepartmentTab.cs" Line="200">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDepartmentTab.deleteDepartmentBtn_Click(object, EventArgs)' could contain the following variables 'editDepartmentTab.departmentNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDepartmentTab.cs" Line="75">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDepartmentTab.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDepartmentTab.cs" Line="37">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDepartmentTab.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#updateDepartmentBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="editDepartmentTab.cs" Line="163">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'editDepartmentTab.updateDepartmentBtn_Click(object, EventArgs)' could contain the following variables 'this.editedDepartmentTxt.Text', 'this.deptCode.Text', 'editDepartmentTab.departmentNumber'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -155,7 +167,7 @@
          <Members>
           <Member Name="#allowanceCombo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="275">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.allowanceCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'EditEmpDeductionAndAllowance.empCode', 'table.Rows[0][0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="259">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.allowanceCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.allowanceCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -163,28 +175,28 @@
           </Member>
           <Member Name="#AllowDeleteBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="433">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.AllowDeleteBtn_Click(object, EventArgs)' could contain the following variables 'this.AllowID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#AllowUpdateBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="392">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.AllowUpdateBtn_Click(object, EventArgs)' could contain the following variables 'this.allowanceAmountTxt.Text', 'this.AllowID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DedDeleteBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="556">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.DedDeleteBtn_Click(object, EventArgs)' could contain the following variables 'this.dedID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#deductionCombo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="323">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.deductionCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'EditEmpDeductionAndAllowance.empCode', 'table.Rows[0][0]', 'this.deductionDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="307">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.deductionCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.deductionCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -192,7 +204,7 @@
           </Member>
           <Member Name="#DedUpdateBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="481">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.DedUpdateBtn_Click(object, EventArgs)' could contain the following variables 'this.deductionAmountTxt.Text', 'this.deductionType.Text', 'this.deductionDate.Text', 'this.dedID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="516">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.DedUpdateBtn_Click(object, EventArgs)' could contain the following variables 'this.percentageTxt.Text', 'this.deductionType.Text', 'this.deductionDate.Text', 'this.dedID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -200,7 +212,7 @@
           </Member>
           <Member Name="#GetDetails(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="195">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.GetDetails(string)' could contain the following variables 'EditEmpDeductionAndAllowance.empCode'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="165">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.GetDetails(string)' could contain the following variables 'EditEmpDeductionAndAllowance.empCode', 'this.deductionDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="146">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.GetDetails(string)' could contain the following variables 'EmpFullName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
@@ -211,7 +223,7 @@
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EditEmpDeductionAndAllowance.cs" Line="81">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EditEmpDeductionAndAllowance.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -222,7 +234,7 @@
          <Members>
           <Member Name="#addAllowanceBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="438">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.addAllowanceBtn_Click(object, EventArgs)' could contain the following variables 'EmployeeAllawanceAndDeductionForm.empCode', 'EmployeeAllawanceAndDeductionForm.allowanceID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="436">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.addAllowanceBtn_Click(object, EventArgs)' could contain the following variables 'EmployeeAllawanceAndDeductionForm.empCode', 'EmployeeAllawanceAndDeductionForm.allowanceID', 'this.allowanceAmountTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -230,7 +242,7 @@
           </Member>
           <Member Name="#addDeductionBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="789">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.addDeductionBtn_Click(object, EventArgs)' could contain the following variables 'EmployeeAllawanceAndDeductionForm.empCode', 'EmployeeAllawanceAndDeductionForm.deductionID', 'this.deductionAmountTxt.Text', 'this.deductionType.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="744">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.addDeductionBtn_Click(object, EventArgs)' could contain the following variables 'EmployeeAllawanceAndDeductionForm.empCode', 'EmployeeAllawanceAndDeductionForm.deductionID', 'this.deductionAmountTxt.Text', 'this.deductionType.Text', 'this.deductionDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="699">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.addDeductionBtn_Click(object, EventArgs)' could contain the following variables 'EmployeeAllawanceAndDeductionForm.empCode', 'EmployeeAllawanceAndDeductionForm.deductionID', 'this.deductionDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
@@ -242,7 +254,7 @@
           </Member>
           <Member Name="#AllowanceAllocateForStaff()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="521">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.AllowanceAllocateForStaff()' could contain the following variables 'table.Rows[i][0]', 'EmployeeAllawanceAndDeductionForm.allowanceID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="520">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.AllowanceAllocateForStaff()' could contain the following variables 'table.Rows[i][0]', 'EmployeeAllawanceAndDeductionForm.allowanceID', 'this.allowanceAmountTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -250,14 +262,14 @@
           </Member>
           <Member Name="#allowanceCombo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="330">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.allowanceCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.allowanceCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#DeductionAllocateForStaff()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="595">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.DeductionAllocateForStaff()' could contain the following variables 'table.Rows[i][0]', 'EmployeeAllawanceAndDeductionForm.deductionID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="634">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.DeductionAllocateForStaff()' could contain the following variables 'table.Rows[i][0]', 'EmployeeAllawanceAndDeductionForm.deductionID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="632">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.DeductionAllocateForStaff()' could contain the following variables 'table.Rows[i][0]', 'EmployeeAllawanceAndDeductionForm.deductionID', 'this.deductionAmountTxt.Text', 'this.deductionType.Text', 'this.deductionDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
@@ -267,21 +279,21 @@
           </Member>
           <Member Name="#deductionCombo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="376">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.deductionCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.deductionCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="284">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeAllawanceAndDeductionForm.cs" Line="155">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeAllawanceAndDeductionForm.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -292,42 +304,42 @@
          <Members>
           <Member Name="#deleteEmpBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="560">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.deleteEmpBtn_Click(object, EventArgs)' could contain the following variables 'this.empCodeTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="563">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.deleteEmpBtn_Click(object, EventArgs)' could contain the following variables 'this.empCodeTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#departmentCombo_SelectedIndexChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="600">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.departmentCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.departmentCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="603">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.departmentCombo_SelectedIndexChanged(object, EventArgs)' could contain the following variables 'this.departmentCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#regiterEmpBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="268">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.regiterEmpBtn_Click(object, EventArgs)' could contain the following variables 'this.firstNameTxt.Text', 'this.middleNameTxt.Text', 'this.lastNameTxt.Text', 'this.empCodeTxt.Text', 'this.deptCode', 'this.dateOfBirth.Text', 'this.salaryCategory.selectedValue', 'this.scaleBaseTxt.Text', 'this.scalePercentTxt.Text', 'this.emailTxt.Text', 'this.phoneNumberTxt.Text', 'this.positionTxt.Text', 'this.bankAcountNumberTxt.Text', 'this.bankNameTxt.Text', 'this.employedDate.Text', 'this.employeeStatus.Text', 'this.deductTitheOnCombo.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="390">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="336">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#updateEmpBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="EmployeeRegForm.cs" Line="507">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'EmployeeRegForm.updateEmpBtn_Click(object, EventArgs)' could contain the following variables 'this.firstNameTxt.Text', 'this.middleNameTxt.Text', 'this.lastNameTxt.Text', 'this.empCodeTxt.Text', 'this.empCodeTxt.Text', 'this.empCodeTxt.Text', 'this.deptCode', 'this.dateOfBirth.Text', 'this.salaryCategory.selectedValue', 'this.scaleBaseTxt.Text', 'this.scalePercentTxt.Text', 'this.emailTxt.Text', 'this.phoneNumberTxt.Text', 'this.positionTxt.Text', 'this.bankAcountNumberTxt.Text', 'this.bankNameTxt.Text', 'this.employedDate.Text', 'this.employeeStatus.Text', 'this.deductTitheOnCombo.Text', 'this.empID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -338,29 +350,37 @@
          <Members>
           <Member Name="#calculationAndGeneration()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="177">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'Emptable.Rows[i][4]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="231">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'Emptable.Rows[i][4]', 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="195">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'allowTable.Rows[j][2]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="247">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'deductionTable.Rows[k][2]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="308">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'deductionTableStatus.Rows[s][0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="135">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="293">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text', 'Emptable.Rows[i][4]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="394">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text', 'new object[5][0]', 'new object[5][2]', 'new object[5][4]', 'new object[79][5]', 'new object[79][7]', 'new object[79][9]', 'Emptable.Rows[i][8]', 'Emptable.Rows[i][9]', 'new object[79][15]', 'new object[79][17]', 'this.salaryBasic', 'this.allowanceAutDepr', 'this.bicycleAllowance', 'this.travelDLeaders', 'this.travelCLimit', 'this.postageExps', 'this.allowanceUtility', 'this.incomeTotal', 'this.incomeTaxable', 'this.tithe', 'this.i_Tax', 'this.socialSecurityFund', 'this.houseRent', 'this.maafaFund', 'this.food', 'this.SACCOS', 'this.salaryAdvance', 'this.NBCLoan', 'this.motorVehicleLoan', 'this.furnitureLoan', 'this.HESLBLoan', 'this.deductionOnAccount', 'this.personalSaving', 'this.NHIF', 'this.salaryNet', 'this.refund_iTax', 'this.payNet', 'new object[79][73]', 'new object[79][75]', 'this.deductionTotal'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="179">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'Emptable.Rows[i][4]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="233">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'Emptable.Rows[i][4]', 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="197">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'allowTable.Rows[j][2]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="249">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'deductionTable.Rows[k][2]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="310">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'deductionTableStatus.Rows[s][0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="136">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="295">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text', 'Emptable.Rows[i][4]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="396">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.calculationAndGeneration()' could contain the following variables 'this.payRollDate.Text', 'new object[5][0]', 'new object[5][2]', 'new object[5][4]', 'new object[79][5]', 'new object[79][7]', 'new object[79][9]', 'Emptable.Rows[i][8]', 'Emptable.Rows[i][9]', 'new object[79][15]', 'new object[79][17]', 'this.salaryBasic', 'this.allowanceAutDepr', 'this.bicycleAllowance', 'this.travelDLeaders', 'this.travelCLimit', 'this.postageExps', 'this.allowanceUtility', 'this.incomeTotal', 'this.incomeTaxable', 'this.tithe', 'this.i_Tax', 'this.socialSecurityFund', 'this.houseRent', 'this.maafaFund', 'this.food', 'this.SACCOS', 'this.salaryAdvance', 'this.NBCLoan', 'this.motorVehicleLoan', 'this.furnitureLoan', 'this.HESLBLoan', 'this.deductionOnAccount', 'this.personalSaving', 'this.NHIF', 'this.salaryNet', 'this.refund_iTax', 'this.payNet', 'new object[79][73]', 'new object[79][75]', 'this.deductionTotal'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#getGeneratedPayRoll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="428">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.getGeneratedPayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="471">Object 'con' can be disposed more than once in method 'generatePayRollTab.getGeneratedPayRoll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 471</Issue>
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="464">Object 'da' can be disposed more than once in method 'generatePayRollTab.getGeneratedPayRoll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 464</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="436">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.getGeneratedPayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SavePayRoll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="492">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.SavePayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="592">Object 'con' can be disposed more than once in method 'generatePayRollTab.SavePayRoll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 592</Issue>
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="584">Object 'da' can be disposed more than once in method 'generatePayRollTab.SavePayRoll()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 584</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="generatePayRollTab.cs" Line="503">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'generatePayRollTab.SavePayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -368,10 +388,17 @@
         </Type>
         <Type Name="Home" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Members>
+          <Member Name="#checkUser()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Home.cs" Line="64">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Home.checkUser()' could contain the following variables 'Login.UID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
           <Member Name="#UpdateLogout(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
-             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Home.cs" Line="131">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Home.UpdateLogout(string)' could contain the following variables 'USID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Home.cs" Line="194">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Home.UpdateLogout(string)' could contain the following variables 'USID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -381,7 +408,7 @@
          <Members>
           <Member Name="#login()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Login.cs" Line="70">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Login.login()' could contain the following variables 'this.username.Text', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Login.cs" Line="72">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Login.login()' could contain the following variables 'this.username.Text', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -389,14 +416,14 @@
           </Member>
           <Member Name="#RecordUserActivity(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Login.cs" Line="138">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Login.RecordUserActivity(string)' could contain the following variables 'Login.UID', 'activity', 'DateTime.Now'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#UpdateLogin(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="Login.cs" Line="37">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'Login.UpdateLogin(string)' could contain the following variables 'USID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -407,7 +434,7 @@
          <Members>
           <Member Name="#sendMessageBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="MessageTab.cs" Line="55">Object 'this' can be disposed more than once in method 'MessageTab.sendMessageBtn_Click(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 55</Issue>
             </Message>
            </Messages>
@@ -418,7 +445,7 @@
          <Members>
           <Member Name="#LoadSlip()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="printreceiptTab.cs" Line="149">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'printreceiptTab.LoadSlip()' could contain the following variables 'printreceiptTab.empCode', 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="printreceiptTab.cs" Line="167">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'printreceiptTab.LoadSlip()' could contain the following variables 'table.Rows[0][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -426,14 +453,14 @@
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="printreceiptTab.cs" Line="100">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'printreceiptTab.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="printreceiptTab.cs" Line="267">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'printreceiptTab.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -444,8 +471,19 @@
          <Members>
           <Member Name="#addDepartmentBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="registerDepartmentTab.cs" Line="77">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'registerDepartmentTab.addDepartmentBtn_Click(object, EventArgs)' could contain the following variables 'this.deptCode.Text', 'this.newDepartmentTxt.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="removedEmployee" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#btn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="removedEmployee.cs" Line="127">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'removedEmployee.btn_Click(object, EventArgs)' could contain the following variables 'button.Name'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -455,7 +493,7 @@
          <Members>
           <Member Name="#PreapareSalarySlip(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="salarySlip.cs" Line="372">Object 'file' can be disposed more than once in method 'salarySlip.PreapareSalarySlip(string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 372</Issue>
             </Message>
            </Messages>
@@ -466,14 +504,14 @@
          <Members>
           <Member Name="#getGeneratedPayRoll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="sendReceiptTab.cs" Line="51">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'sendReceiptTab.getGeneratedPayRoll()' could contain the following variables 'this.receiptDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#sendEmail()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="sendReceiptTab.cs" Line="160">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'sendReceiptTab.sendEmail()' could contain the following variables 'table.Rows[i][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="sendReceiptTab.cs" Line="138">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'sendReceiptTab.sendEmail()' could contain the following variables 'this.receiptDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
@@ -485,28 +523,28 @@
          <Members>
           <Member Name="#deleteUserBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="updateUserTab.cs" Line="241">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'updateUserTab.deleteUserBtn_Click(object, EventArgs)' could contain the following variables 'this.empID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchResultDataGrid_CellMouseClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="updateUserTab.cs" Line="114">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'updateUserTab.searchResultDataGrid_CellMouseClick(object, DataGridViewCellMouseEventArgs)' could contain the following variables 'selectedIndex.Cells[0].Value'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#searchText_OnValueChanged(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="updateUserTab.cs" Line="37">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'updateUserTab.searchText_OnValueChanged(object, EventArgs)' could contain the following variables 'this.searchText.Text', 'this.searchText.Text', 'this.searchText.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#updateUserBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="updateUserTab.cs" Line="204">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'updateUserTab.updateUserBtn_Click(object, EventArgs)' could contain the following variables 'this.firstNameTxt.Text', 'this.middleNameTxt.Text', 'this.lastNameTxt.Text', 'this.userNameTxt.Text', 'new string[15][9]', 'this.userCategory.selectedValue', 'this.empID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -517,14 +555,14 @@
          <Members>
           <Member Name="#verifyBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="VerifyLogin.cs" Line="74">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'VerifyLogin.verifyBtn_Click(object, EventArgs)' could contain the following variables 'Login.UID', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#VerifyLogin_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="VerifyLogin.cs" Line="39">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'VerifyLogin.VerifyLogin_Load(object, EventArgs)' could contain the following variables 'Login.UID'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -535,7 +573,7 @@
          <Members>
           <Member Name="#viewActivityBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="ViewActivites.cs" Line="61">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'ViewActivites.viewActivityBtn_Click(object, EventArgs)' could contain the following variables 'this.activityDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
@@ -544,16 +582,24 @@
         </Type>
         <Type Name="viewPayRollTab" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Members>
+          <Member Name="#deleteBtn_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="viewPayRollTab.cs" Line="254">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'viewPayRollTab.deleteBtn_Click(object, EventArgs)' could contain the following variables 'payRollTable.Rows[i][0]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="viewPayRollTab.cs" Line="233">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'viewPayRollTab.deleteBtn_Click(object, EventArgs)' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
           <Member Name="#getGeneratedPayRoll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="viewPayRollTab.cs" Line="50">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'viewPayRollTab.getGeneratedPayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#SavePayRoll()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-07 06:23:41Z" FixCategory="DependsOnFix">
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2018-09-17 07:49:41Z" FixCategory="DependsOnFix">
              <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Shadrack Ikwabe\documents\visual studio 2015\Projects\PayRoll Sytem\PayRoll Sytem" File="viewPayRollTab.cs" Line="132">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'viewPayRollTab.SavePayRoll()' could contain the following variables 'this.payRollDate.Text'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
             </Message>
            </Messages>

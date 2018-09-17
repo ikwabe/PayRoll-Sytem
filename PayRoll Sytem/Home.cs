@@ -24,7 +24,7 @@ namespace PayRoll_Sytem
 
         //mysql connection string
         public static string computerName = Environment.UserName;
-        public static string DBconnection = "server = 192.168.1.112; user = payroll; password = 'secadventist' ; database = payrolldatabase ";
+        public static string DBconnection = "server = localhost; user = root; password = '' ; database = payrolldatabase ";
        
         static void createDirectory()
         {
@@ -35,6 +35,7 @@ namespace PayRoll_Sytem
                 if (!Directory.Exists(rootDirectory)) { Directory.CreateDirectory(rootDirectory); }
                 if (!Directory.Exists(rootDirectory + "\\Receipts")) { Directory.CreateDirectory(rootDirectory + "\\Receipts"); }
                 if (!Directory.Exists(rootDirectory + "\\Logo")) { Directory.CreateDirectory(rootDirectory + "\\Logo"); }
+                if (!Directory.Exists(rootDirectory + "\\Database Backups")) { Directory.CreateDirectory(rootDirectory + "\\Database Backups"); }
 
                 //directory for payrolls
                 if (!Directory.Exists(payrollDirectory)) { Directory.CreateDirectory(payrollDirectory); }
@@ -53,7 +54,69 @@ namespace PayRoll_Sytem
 
         }
 
+        private void checkUser()
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
 
+            string loadUser = "select userCategory from users where UID = '" + Login.UID + "'";
+          
+            MySqlCommand com = new MySqlCommand(loadUser, con);
+
+            MySqlDataAdapter da;
+
+            DataTable tab = new DataTable();
+
+            try
+            {
+                con.Open();
+                da = new MySqlDataAdapter(com);
+                da.Fill(tab);
+                da.Dispose();
+
+               
+                if(tab.Rows[0][0].ToString() == "ADMINISTRATOR")
+                {
+                    //label2.Visible = true;
+                    //adiminBtn.Visible = true;
+
+                    ChangePasswordBtn.Visible = false;
+                    label10.Visible = false;
+                }
+                else
+                {
+                    //possitioning buttons and labels for normal user
+                    pay_RollBtn.Location = new Point(293, 201);
+                    pay_RollBtn.BringToFront();
+                    employeeButn.Visible = false;
+
+                    label8.Location = new Point(302, 330);
+                    label8.BringToFront();
+                    label3.Visible = false;
+
+                    receiptsBtn.Location = new Point(479, 201);
+                    receiptsBtn.BringToFront();
+                    allowanceAndDeductionBtn.Visible = false;
+
+                    label9.Location = new Point(498, 330);
+                    label9.BringToFront();
+                    label4.Visible = false;
+
+                    departimentBn.Visible = false;
+                    label7.Visible = false;
+
+                    label2.Visible = false;
+                    adiminBtn.Visible = false;
+                    //ChangePasswordBtn.Visible = true;
+                    //label10.Visible = true;
+                }
+
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
        
 
@@ -154,5 +217,50 @@ namespace PayRoll_Sytem
                 log.Show();
             }
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            checkUser();
+            DataBaseBackUp();
+        }
+
+        private void ChangePasswordBtn_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                ChangePassword change = new ChangePassword();
+                change.ShowDialog();
+            }
+        }
+
+
+        //Database backup
+        private void DataBaseBackUp()
+        {
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = Home.DBconnection;
+
+            MySqlCommand com = new MySqlCommand();
+            MySqlBackup bckp;
+                    
+            com.Connection = con;
+
+            con.Open();
+
+            if (File.Exists("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Database Backups/Payroll_backup.sql"))
+            {
+                bckp =  new MySqlBackup(com);
+                File.Delete("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Database Backups/Payroll_backup.sql");
+                bckp.ExportToFile("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Database Backups/Payroll_backup.sql");
+            }
+            else
+            {
+                bckp = new MySqlBackup(com);
+                bckp.ExportToFile("C:/Users/" + Home.computerName + "/AppData/Roaming/SEC Payroll/Database Backups/Payroll_backup.sql");
+            }     
+                
+            con.Close();
+        }
+
     }
 }

@@ -48,7 +48,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadEmpNames = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee";
+            string loadEmpNames = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(loadEmpNames, con);
             MySqlDataAdapter da;
             DataTable table = new DataTable();
@@ -96,7 +96,7 @@ namespace PayRoll_Sytem
                     MySqlConnection con = new MySqlConnection();
                     con.ConnectionString = Home.DBconnection;
 
-                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "'";
+                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "' AND STATE = 'ACTIVE'";
                     MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
                     MySqlDataAdapter da;
                     DataTable table = new DataTable();
@@ -162,7 +162,7 @@ namespace PayRoll_Sytem
                         if (table.Rows.Count > 0)
                         {
                             checkReceipt = true;
-                            string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[0][3].ToString() + "' ";
+                            string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[0][3].ToString() + "' AND STATE = 'ACTIVE'";
 
                             MySqlCommand com2 = new MySqlCommand(getYear, con);
 
@@ -263,7 +263,7 @@ namespace PayRoll_Sytem
         {
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
-            string search = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%'";
+            string search = " select CONCAT(fname,' ',mname, ' ',lname) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' AND STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(search, con);
 
 

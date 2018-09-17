@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewPayRollTab));
             this.payRollDataGrid = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.viewPayRollBtn = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,6 +40,7 @@
             this.saveAsPayRollBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.payRollDate = new System.Windows.Forms.DateTimePicker();
+            this.deleteBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.payRollDataGrid)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,32 +53,32 @@
             this.payRollDataGrid.AllowUserToDeleteRows = false;
             this.payRollDataGrid.AllowUserToResizeColumns = false;
             this.payRollDataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.payRollDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.payRollDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.payRollDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.payRollDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.payRollDataGrid.BackgroundColor = System.Drawing.Color.Silver;
             this.payRollDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.payRollDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.payRollDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(85)))), ((int)(((byte)(127)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.payRollDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.payRollDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.payRollDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.payRollDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
             this.payRollDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.payRollDataGrid.DoubleBuffered = true;
             this.payRollDataGrid.EnableHeadersVisualStyles = false;
@@ -197,6 +198,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.payRollDate);
             this.panel1.Controls.Add(this.viewPayRollBtn);
             this.panel1.Controls.Add(this.label6);
@@ -215,6 +217,41 @@
             this.payRollDate.Name = "payRollDate";
             this.payRollDate.Size = new System.Drawing.Size(356, 27);
             this.payRollDate.TabIndex = 46;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.deleteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteBtn.BorderRadius = 5;
+            this.deleteBtn.ButtonText = "Delete Employee";
+            this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteBtn.DisabledColor = System.Drawing.Color.Gray;
+            this.deleteBtn.Iconcolor = System.Drawing.Color.Transparent;
+            this.deleteBtn.Iconimage = null;
+            this.deleteBtn.Iconimage_right = null;
+            this.deleteBtn.Iconimage_right_Selected = null;
+            this.deleteBtn.Iconimage_Selected = null;
+            this.deleteBtn.IconMarginLeft = 0;
+            this.deleteBtn.IconMarginRight = 0;
+            this.deleteBtn.IconRightVisible = true;
+            this.deleteBtn.IconRightZoom = 0D;
+            this.deleteBtn.IconVisible = true;
+            this.deleteBtn.IconZoom = 80D;
+            this.deleteBtn.IsTab = false;
+            this.deleteBtn.Location = new System.Drawing.Point(475, 30);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.deleteBtn.OnHovercolor = System.Drawing.Color.Red;
+            this.deleteBtn.OnHoverTextColor = System.Drawing.Color.White;
+            this.deleteBtn.selected = false;
+            this.deleteBtn.Size = new System.Drawing.Size(146, 34);
+            this.deleteBtn.TabIndex = 47;
+            this.deleteBtn.Text = "Delete Employee";
+            this.deleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deleteBtn.Textcolor = System.Drawing.Color.White;
+            this.deleteBtn.TextFont = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // viewPayRollTab
             // 
@@ -245,5 +282,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker payRollDate;
+        private Bunifu.Framework.UI.BunifuFlatButton deleteBtn;
     }
 }

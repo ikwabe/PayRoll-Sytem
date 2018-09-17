@@ -155,7 +155,7 @@ namespace PayRoll_Sytem
 
                     for (int i = 0; i < table.Rows.Count; i++)
                     {
-                        string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[i][3].ToString() + "' ";
+                        string getYear = "select dateRegistered from employee where empCode = '" + table.Rows[i][3].ToString() + "' AND STATE = 'ACTIVE'";
 
                         MySqlCommand com2 = new MySqlCommand(getYear, con);
 

@@ -118,7 +118,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadEmpNames = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee";
+            string loadEmpNames = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee where STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(loadEmpNames, con);
             MySqlDataAdapter da;
             DataTable table = new DataTable();
@@ -151,7 +151,7 @@ namespace PayRoll_Sytem
         {
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
-            string search = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' or CONCAT(fname,' ',mname, ' ',lname) like '" + searchText.Text + "%'";
+            string search = " select upper(CONCAT(fname,' ',mname, ' ',lname)) 'Employee Name' from employee where fname like '" + searchText.Text + "%' or mname like '" + searchText.Text + "%' or lname like '" + searchText.Text + "%' or CONCAT(fname,' ',mname, ' ',lname) like '" + searchText.Text + "%' AND STATE = 'ACTIVE'";
             MySqlCommand com = new MySqlCommand(search, con);
 
 
@@ -280,7 +280,7 @@ namespace PayRoll_Sytem
                     MySqlConnection con = new MySqlConnection();
                     con.ConnectionString = Home.DBconnection;
 
-                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "'";
+                    string loadEmpDetails = "select * from employee where CONCAT(fname,' ',mname, ' ',lname) = '" + EmployeeFullName + "' AND STATE = 'ACTIVE'";
                     MySqlCommand com = new MySqlCommand(loadEmpDetails, con);
                     MySqlDataAdapter da;
                     DataTable table = new DataTable();
@@ -495,7 +495,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadStaffId = "select empCode from employee where statuse = 'STAFF'";
+            string loadStaffId = "select empCode from employee where statuse = 'STAFF' AND STATE = 'ACTIVE'";
 
             MySqlCommand com = new MySqlCommand(loadStaffId, con);
 
@@ -567,7 +567,7 @@ namespace PayRoll_Sytem
             MySqlConnection con = new MySqlConnection();
             con.ConnectionString = Home.DBconnection;
 
-            string loadStaffId = "select empCode from employee where statuse = 'STAFF'";
+            string loadStaffId = "select empCode from employee where statuse = 'STAFF' AND STATE = 'ACTIVE'";
 
             MySqlCommand com = new MySqlCommand(loadStaffId, con);
 
@@ -861,6 +861,7 @@ namespace PayRoll_Sytem
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
+            empID = null;
             this.Close();
             EditEmpDeductionAndAllowance edit = new EditEmpDeductionAndAllowance();
             edit.ShowDialog();

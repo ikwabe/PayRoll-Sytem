@@ -47,6 +47,9 @@
     <Reference Include="MySql.Data">
       <HintPath>E:\Backups for Visual Studio Projects\Visual Studio 2015\Projects\UdoRead\OnlineMongo\OnlineMongo\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="mysqlbackup">
+      <HintPath>..\packages\mysqlbackup.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -96,6 +99,12 @@
     </Compile>
     <Compile Include="AllowanceTab.Designer.cs">
       <DependentUpon>AllowanceTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="deductionTab.cs">
       <SubType>UserControl</SubType>
@@ -195,6 +204,12 @@
     <Compile Include="registerDepartmentTab.Designer.cs">
       <DependentUpon>registerDepartmentTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="removedEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="removedEmployee.Designer.cs">
+      <DependentUpon>removedEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="salarySlip.cs" />
     <Compile Include="sendReceiptTab.cs">
       <SubType>UserControl</SubType>
@@ -243,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllowanceTab.resx">
       <DependentUpon>AllowanceTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="deductionTab.resx">
       <DependentUpon>deductionTab.cs</DependentUpon>
@@ -301,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="registerDepartmentTab.resx">
       <DependentUpon>registerDepartmentTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="removedEmployee.resx">
+      <DependentUpon>removedEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sendReceiptTab.resx">
       <DependentUpon>sendReceiptTab.cs</DependentUpon>
