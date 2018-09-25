@@ -15,6 +15,7 @@ namespace PayRoll_Sytem
     {
         public EditEmpDeductionAndAllowance()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

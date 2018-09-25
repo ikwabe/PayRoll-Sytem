@@ -14,6 +14,7 @@ namespace PayRoll_Sytem
     {
         public departmentForm()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

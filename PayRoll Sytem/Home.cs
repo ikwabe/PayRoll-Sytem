@@ -17,6 +17,7 @@ namespace PayRoll_Sytem
     {
         public Home()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
             createDirectory();
         }
@@ -221,7 +222,7 @@ namespace PayRoll_Sytem
         private void Home_Load(object sender, EventArgs e)
         {
             checkUser();
-            DataBaseBackUp();
+            
         }
 
         private void ChangePasswordBtn_MouseClick(object sender, MouseEventArgs e)
@@ -230,6 +231,7 @@ namespace PayRoll_Sytem
             {
                 ChangePassword change = new ChangePassword();
                 change.ShowDialog();
+
             }
         }
 

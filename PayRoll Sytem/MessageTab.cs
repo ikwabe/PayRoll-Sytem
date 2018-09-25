@@ -14,6 +14,7 @@ namespace PayRoll_Sytem
     {
         public MessageTab()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

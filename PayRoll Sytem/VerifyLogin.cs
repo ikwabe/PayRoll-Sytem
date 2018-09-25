@@ -15,6 +15,7 @@ namespace PayRoll_Sytem
     {
         public VerifyLogin()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

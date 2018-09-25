@@ -15,6 +15,7 @@ namespace PayRoll_Sytem
     {
         public ChangePassword()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

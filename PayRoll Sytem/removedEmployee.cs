@@ -16,6 +16,7 @@ namespace PayRoll_Sytem
     {
         public removedEmployee()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

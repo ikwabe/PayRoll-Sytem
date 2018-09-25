@@ -15,6 +15,7 @@ namespace PayRoll_Sytem
     {
         public ViewActivites()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

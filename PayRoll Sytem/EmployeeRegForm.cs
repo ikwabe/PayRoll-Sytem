@@ -17,6 +17,7 @@ namespace PayRoll_Sytem
     {
         public EmployeeRegForm()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
 
         }

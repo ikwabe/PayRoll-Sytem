@@ -15,6 +15,7 @@ namespace PayRoll_Sytem
     {
         public EmployeeAllawanceAndDeductionForm()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 

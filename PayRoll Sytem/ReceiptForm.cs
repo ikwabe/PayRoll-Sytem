@@ -14,6 +14,7 @@ namespace PayRoll_Sytem
     {
         public ReceiptForm()
         {
+            this.ShowInTaskbar = false;
             InitializeComponent();
         }
 
